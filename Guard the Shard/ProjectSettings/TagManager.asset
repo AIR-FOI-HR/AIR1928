@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Route1
+  - Route2
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3996537333
+    locked: 0
+  - name: River
+    uniqueID: 1558450249
+    locked: 0
+  - name: Road
+    uniqueID: 2283131267
+    locked: 0
+  - name: Bridge
+    uniqueID: 1664299925
+    locked: 0
+  - name: Nature
+    uniqueID: 155219851
+    locked: 0
+  - name: Buildings
+    uniqueID: 3560230589
     locked: 0
