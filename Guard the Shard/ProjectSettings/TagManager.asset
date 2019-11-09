@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Route1
   - Route2
+  - Turret
   layers:
   - Default
   - TransparentFX
