@@ -10,54 +10,49 @@ public class MovementAndDetection : MonoBehaviour
     {
         script = GameObject.FindGameObjectWithTag("Turret").GetComponent<MovementOfTurret>();
     }
-
+    
+    private bool RaycastElemnt(string tag, RaycastHit2D[] hits)
+    {
+        bool answer = false;
+        foreach (var item in hits)
+        {
+            if(item.collider.tag == tag)
+            {
+                answer = true;
+            }
+        }
+        return answer;
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            Debug.Log("tap");
-            //script.Teleport();
-            
+            //Debug.Log("tap");
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-            script.Teleport(hit);
-            /*
-            if (hit.collider != null)
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, Vector2.zero);
+            if (script.selected == false)
             {
-                Debug.Log("Hit Collider: " + hit.transform.name);
+                if (RaycastElemnt("Turret",hits))
+                {
+                    script.selected = true;
+                    //Debug.Log(script.selected);
+                }
             }
             else
             {
-                Debug.Log("No colliders hit from tap");
-            }
-            /*
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                Debug.Log(hit.transform.gameObject.name);
-            }
-            /*
-            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit raycastHit;
-            if (Physics.Raycast(raycast, out raycastHit))
-            {
-                Debug.Log("Something Hit");
-                if (raycastHit.collider.name == "Turret")
+                if(RaycastElemnt("Turret", hits))
                 {
-                    Debug.Log("Soccer Ball clicked");
+                    script.selected = false;
+                    //Debug.Log(script.selected);
                 }
-
-                //OR with Tag
-
-                if (raycastHit.collider.CompareTag("SoccerTag"))
+                else if(RaycastElemnt("Usable", hits))
                 {
-                    Debug.Log("Soccer Ball clicked");
+                    script.Teleport();
+                    script.selected = false;
                 }
             }
-            */
+            
         }
     }
 }
