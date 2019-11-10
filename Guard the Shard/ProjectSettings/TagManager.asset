@@ -8,6 +8,8 @@ TagManager:
   - Route2
   - Turret
   - Usable
+  - EarthEnemy
+  - AirEnemy
   layers:
   - Default
   - TransparentFX
@@ -65,4 +67,7 @@ TagManager:
     locked: 0
   - name: Turret
     uniqueID: 1609955377
+    locked: 0
+  - name: Bullet
+    uniqueID: 4003250763
     locked: 0
