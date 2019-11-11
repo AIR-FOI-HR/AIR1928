@@ -8,6 +8,8 @@ public class TurretAttacking : MonoBehaviour
     public Transform target;
     //domet
     public float range = 4f;
+    //šteta koja se nanosi pri napadu
+    public float damage = 50;
     //tip turreta
     public string type = "ground";
     //broj metaka u sekundi
@@ -105,7 +107,7 @@ public class TurretAttacking : MonoBehaviour
         //ako je bullet postavljen prosljedi metu
         if(bullet != null)
         {
-            bullet.Seek(target,type);
+            bullet.Seek(target,type,damage);
         }
     }
     //Gizmos da mozemo vit radijus u kojem se gađa

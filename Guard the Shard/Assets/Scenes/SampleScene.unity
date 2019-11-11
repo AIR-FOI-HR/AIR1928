@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 187129754}
   - component: {fileID: 187129753}
   - component: {fileID: 187129757}
+  - component: {fileID: 187129758}
   m_Layer: 0
   m_Name: Neprijatelj
   m_TagString: EarthEnemy
@@ -508,7 +509,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f61b2d115f9464ea8c3de1feb38dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
+--- !u!114 &187129758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187129752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679cb7c887dc81140a4de589044cef0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  worth: 50
 --- !u!1 &207798519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,6 +2702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   range: 4
+  damage: 50
   type: ground
   fireRate: 1
   bulletPrefab: {fileID: 7978985172358979000, guid: 256ecf2cc135a6649948154d88d689f9,
