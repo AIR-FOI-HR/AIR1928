@@ -33,25 +33,10 @@ public class AudioManagerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Provjera je li uključen menu za pauzu ako je, onda se zvukovi gase inace se pale (dorada->optimizacija)
-        if (Time.timeScale == 0f)
-        {
-
-            foreach (Sound s in sounds)
-            {
-                Mute(s.name);
-            }
-        }
-        else
-        {
-            foreach (Sound s in sounds)
-            {
-                Unmute(s.name);
-            }
-        }
+        
     }
 
-    void Play(string name)
+    public void Play(string name)
     {
         //Izraz za pronalaženje zvuka po imenu danom u UnityEditoru
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -65,7 +50,7 @@ public class AudioManagerController : MonoBehaviour
     }
 
     //Pronalazi zuvkovni zapis po imenu i prigusuje ga
-    void Mute(string name)
+    public void Mute(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -86,4 +71,22 @@ public class AudioManagerController : MonoBehaviour
         }
         s.source.mute = false;
     }
+
+    public void MuteAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            Mute(s.name);
+        }
+    }
+
+    public void UnMuteAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            Unmute(s.name);
+        }
+    }
+
 }
+

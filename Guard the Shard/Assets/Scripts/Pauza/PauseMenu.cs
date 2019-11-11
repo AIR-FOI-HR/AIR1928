@@ -41,6 +41,7 @@ public class PauseMenu : MonoBehaviour
         //Zaustavlja igru
         Time.timeScale = 0f;
         //Event handleri za izbore u menu
+        FindObjectOfType<AudioManagerController>().MuteAll();
 
         Button btnQuit = QuitButton.GetComponent<Button>();
         btnQuit.onClick.AddListener(Quit);
@@ -55,11 +56,13 @@ public class PauseMenu : MonoBehaviour
         //Stanje igranja, nema pause menua i objekti se pomicu
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        FindObjectOfType<AudioManagerController>().UnMuteAll();
     }
     void Menu()
     {
         //Kada glavni izbornik bude napravljen biti će dodana navigacija
         //SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        //FindObjectOfType<AudioManagerController>().UnMuteAll();
     }
     void Quit()
     {
