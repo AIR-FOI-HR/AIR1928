@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class GameOverScreen : MonoBehaviour
 {
     //Za potrebe testiranja se koristi property isGameOver, kasnije ce logika biti drugacije implementirana
-    bool isGameOver = true;
+    bool isGameOver = false;
+    //hardcodirana vrijednost za potrebe testiranja
+    public float result = 3000;
     public Button PlayAgainButton;
     public Button GoToMenuButton;
     public GameObject PauseButton;
     // Start is called before the first frame update
     public GameObject gameOverScreenUi;
+    public Text userResult;
     //Dodati event listenere
     void Awake()
     {
@@ -38,12 +41,13 @@ public class GameOverScreen : MonoBehaviour
             gameOverScreenUi.SetActive(true);
             Time.timeScale = 0f;
             PauseButton.SetActive(false);
+            userResult.text = "Your score: " + result.ToString();
             
         }
     }
 
    void PlayAgain()
-    {
+    {         
         //Riješiti ponovo pokretanje scene -> transform error
         //string currentSceneName = SceneManager.GetActiveScene().name;
         //SceneManager.LoadScene(currentSceneName);

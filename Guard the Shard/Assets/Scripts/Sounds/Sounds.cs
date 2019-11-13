@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 [System.Serializable]
 public class Sound 
 {
+    //propertiji koji definiraju karakteristike zvukova 
     public AudioClip clip;
     public string name;
 
