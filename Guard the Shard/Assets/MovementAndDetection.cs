@@ -45,7 +45,7 @@ public class MovementAndDetection : MonoBehaviour
                     //Debug.Log(script.selected);
                 }
             }
-            //ako nije
+            //ako nije ne selektiran tj selektiran je
             else
             {
                 //tap na turret

@@ -9,8 +9,10 @@ public class NeprijateljFunction : MonoBehaviour
     //bodovi po uništenju neprijatelja
     public int worth = 50;
     //uzimanje štete
+    public Scoring scorinScript;
     public void TakeDamage(float amount)
     {
+        scorinScript = GameObject.Find("Score").GetComponent<Scoring>();
         //oduzimanje života jednako količini štete koja se nanosi
         health -= amount;
         //ako health-a više nema pokreće se funkcija za uništavanje
@@ -25,8 +27,9 @@ public class NeprijateljFunction : MonoBehaviour
         //===========> TO DO: tu animacije za smrt <===================
         //napomena za Zvonu u ovoj se funkciji ovaj objekt MORA uništiti da sve funkcionira kako spada
         //u suprotnom će turret i danlje gađati ovaj objekt, stoga animaciju staviti u drugi objekt
-
-        //===========> TO DO: nadodati worth + kalkulacije na score <=============
+        //nadodavanje score-a
+        scorinScript.AddScore(worth);
+        //uništavanje objekta
         Destroy(gameObject);
     }
 }
