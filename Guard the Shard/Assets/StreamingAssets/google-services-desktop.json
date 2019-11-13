@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "872711206300",
+    "firebase_url": "https://guard-the-shard.firebaseio.com",
+    "project_id": "guard-the-shard",
+    "storage_bucket": "guard-the-shard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872711206300:android:b10ca8c6f68dae5b7dc459",
+        "android_client_info": {
+          "package_name": "hr.foi.air.GuardTheShard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872711206300-hc6h53nn2l5ueumjoh5cs2bv53tshm8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM9RTC1-pyj8-p8WE-4AV8IMMY_23kyl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872711206300-hc6h53nn2l5ueumjoh5cs2bv53tshm8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
