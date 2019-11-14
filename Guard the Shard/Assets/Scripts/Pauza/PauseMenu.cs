@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     //menu i buttoni koji se nalaze na menu
     public GameObject PauseMenuUI;
+    public GameObject CoverPanel;
     public Button ResumeButton;
     public Button QuitButton;
     public Button MenuButton;
@@ -15,7 +16,6 @@ public class PauseMenu : MonoBehaviour
 
     
 
-    //public bool Paused = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +35,12 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        
+
         //Aktivira pause menu
         PauseMenuUI.SetActive(true);
+        CoverPanel.SetActive(true);
+        
+        
         //Zaustavlja igru
         Time.timeScale = 0f;
         //Event handleri za izbore u menu
@@ -54,7 +57,9 @@ public class PauseMenu : MonoBehaviour
     void Resume()
     {
         //Stanje igranja, nema pause menua i objekti se pomicu
+        CoverPanel.SetActive(false);
         PauseMenuUI.SetActive(false);
+        
         Time.timeScale = 1f;
         FindObjectOfType<AudioManagerController>().UnMuteAll();
     }

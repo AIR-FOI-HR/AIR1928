@@ -15,6 +15,7 @@ public class GameOverScreen : MonoBehaviour
     public GameObject PauseButton;
     // Start is called before the first frame update
     public GameObject gameOverScreenUi;
+    public GameObject coverGameOver;
     public Text userResult;
     //Dodati event listenere
     void Awake()
@@ -27,7 +28,7 @@ public class GameOverScreen : MonoBehaviour
     //Na početku igranja screen je neaktivan
     void Start()
     {
-  
+        coverGameOver.SetActive(false);
         gameOverScreenUi.SetActive(false);
         
     }
@@ -38,10 +39,11 @@ public class GameOverScreen : MonoBehaviour
         //Kada je igra gotovo zaustaviti igranje i prikazati game over screen -> optimizacija!
         if (isGameOver)
         {
-            gameOverScreenUi.SetActive(true);
-            Time.timeScale = 0f;
             PauseButton.SetActive(false);
+            Time.timeScale = 0f;
             userResult.text = "Your score: " + result.ToString();
+            gameOverScreenUi.SetActive(true);
+            coverGameOver.SetActive(true);        
             
         }
     }
