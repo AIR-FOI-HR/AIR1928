@@ -6,7 +6,6 @@ public class MovementOfTurret : MonoBehaviour
 {
     //selektiranost za kretanje
     public bool selected = false;
-    //tip turreta
     void Start()
     {
 
