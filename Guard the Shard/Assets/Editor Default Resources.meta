@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Guard the Shard/Assets/Editor Default Resources.meta
 guid: aca14bc0809d174488eb0b29c3eb18a7
+=======
+guid: 717ff440e01cb8b4b951f3b983a69b39
+>>>>>>> e1c181085f2eba7e1992b7c8c4791fb2540a6b49:Guard the Shard/Assets/Sprites/UI/InGame.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

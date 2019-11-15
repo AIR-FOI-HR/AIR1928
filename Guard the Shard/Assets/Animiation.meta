@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Guard the Shard/Assets/Animiation.meta
 guid: 2703f8e60f89ae641a99c895bb1d7db1
+=======
+guid: 184c6aaa6471a9e48849e57bff6e87e6
+>>>>>>> e1c181085f2eba7e1992b7c8c4791fb2540a6b49:Guard the Shard/Assets/Battle Music Pack DEMO.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

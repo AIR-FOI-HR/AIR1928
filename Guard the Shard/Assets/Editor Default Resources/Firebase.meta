@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Guard the Shard/Assets/Editor Default Resources/Firebase.meta
 guid: b4cb67bdd1b3b994db4799b1e7bc56dd
+=======
+guid: 6b21cd21f8e1bcf45bd038c2bb3c071c
+>>>>>>> e1c181085f2eba7e1992b7c8c4791fb2540a6b49:Guard the Shard/Assets/Scripts/GameOver.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
