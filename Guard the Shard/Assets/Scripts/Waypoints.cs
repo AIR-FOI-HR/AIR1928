@@ -4,9 +4,9 @@ using System.Collections.Generic;
 public class Waypoints : MonoBehaviour
 {
     //prvi put za neprijatelje
-    public static List<Transform> points1 = new List<Transform>();
+    public List<Transform> points1 = new List<Transform>();
     //drugi put za neprijatelje
-    public static List<Transform> points2 = new List<Transform>();
+    public List<Transform> points2 = new List<Transform>();
 
     void Awake()
     {

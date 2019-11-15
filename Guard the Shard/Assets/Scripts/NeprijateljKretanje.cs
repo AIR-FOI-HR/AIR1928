@@ -9,12 +9,23 @@ public class NeprijateljKretanje : MonoBehaviour
     private Transform target;
     //postavka indeksa na 0 kao uvjet za ostalo
     private int waypointIndex = 0;
+    //za svrhe oduzimanja bodova na kraju puta
+    public BaseHealth baseHealth;
     //============> put koji se prati mijenjati po potrebi !!!!!! <========
     //zasad je stavljeno na prvi put tj points1 (može se promijeniti na points2 ako je želi drugi put)
-    public static List<Transform> travelRoute = Waypoints.points1;
+    public Waypoints movement;
+    //ruta za kretanje pogledaj start za nastavak
+    public List<Transform> travelRoute;
+    //
 
     void Start()
     {
+        //dohvaćanje skripte
+        baseHealth = GameObject.Find("BaseHealth").GetComponent<BaseHealth>();
+        movement = GameObject.Find("Waypoints").GetComponent<Waypoints>();
+        //============> put koji se prati mijenjati po potrebi !!!!!! <========
+        //zasad je stavljeno na prvi put tj points1 (može se promijeniti na points2 ako je želi drugi put)
+        travelRoute = movement.points1;
         //inicijalno postavljanje mete
         target = travelRoute[0];
     }
@@ -37,6 +48,7 @@ public class NeprijateljKretanje : MonoBehaviour
         if(waypointIndex >= travelRoute.Count - 1)
         {
             //uništenje
+            baseHealth.TakeDamage();
             Destroy(gameObject);
             return;
         }
