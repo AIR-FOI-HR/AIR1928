@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseHealth : MonoBehaviour
 {
     public int LivesLeft = 5;
+    public GameObject gameOverScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,7 @@ public class BaseHealth : MonoBehaviour
         //ako smo ostali bez života
         if (LivesLeft <= 0)
         {
+            gameOverScreen.SetActive(true);
             //Game over and shit
         }
     }

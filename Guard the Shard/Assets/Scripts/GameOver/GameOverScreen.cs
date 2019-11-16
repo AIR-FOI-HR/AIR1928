@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
 {
-    
+
+     
     //Za potrebe testiranja se koristi property isGameOver, kasnije ce logika biti drugacije implementirana
-    bool isGameOver = false;
+     
     //hardcodirana vrijednost za potrebe testiranja
     public Text ScoreUi;
     public Button PlayAgainButton;
@@ -37,8 +38,9 @@ public class GameOverScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //Kada je igra gotovo zaustaviti igranje i prikazati game over screen -> optimizacija!
-        if (isGameOver)
+        if (gameOverScreenUi.activeSelf)
         {
             PauseButton.SetActive(false);
             Time.timeScale = 0f;
