@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
 {
+    
     //Za potrebe testiranja se koristi property isGameOver, kasnije ce logika biti drugacije implementirana
     bool isGameOver = false;
     //hardcodirana vrijednost za potrebe testiranja
-    public float result = 3000;
+    public Text ScoreUi;
     public Button PlayAgainButton;
     public Button GoToMenuButton;
     public GameObject PauseButton;
@@ -41,7 +42,7 @@ public class GameOverScreen : MonoBehaviour
         {
             PauseButton.SetActive(false);
             Time.timeScale = 0f;
-            userResult.text = "Your score: " + result.ToString();
+            userResult.text = "Your score: " + ScoreUi.text;
             gameOverScreenUi.SetActive(true);
             coverGameOver.SetActive(true);        
             
@@ -49,10 +50,9 @@ public class GameOverScreen : MonoBehaviour
     }
 
    void PlayAgain()
-    {         
-        //Riješiti ponovo pokretanje scene -> transform error
-        //string currentSceneName = SceneManager.GetActiveScene().name;
-        //SceneManager.LoadScene(currentSceneName);
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
 
 
     }
