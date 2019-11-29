@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8b30e9056e1470041b954c4245a4503b
+=======
+<<<<<<<< HEAD:Guard the Shard/Assets/Sprites/Enemy.meta
+guid: a6f1f15e3f756244b9b840ae99fb341b
+========
+guid: b9d6bf8c2da067348a274e0adb79017e
+>>>>>>>> Fabio:Guard the Shard/Assets/Plugins/Android/Firebase/res.meta
+>>>>>>> Fabio
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

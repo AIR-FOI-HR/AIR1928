@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TurretAttacking : MonoBehaviour
 {
     //meta
@@ -19,6 +19,14 @@ public class TurretAttacking : MonoBehaviour
     //varijable koje drze objekte prvi za metak drugi za poziciju odakle kreće metak
     public GameObject bulletPrefab;
     public Transform firePoint;
+    //button za zamjenu turretta
+    public Button changeButton;
+
+    void Awake()
+    {
+        //na klik gumba za promjenu se mijenja turreta
+        changeButton.onClick.AddListener(TypeChange);
+    }
     // Start is called before the first frame update
     void Start()
     {

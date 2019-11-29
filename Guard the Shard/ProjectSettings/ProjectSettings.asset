@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 18
+<<<<<<< HEAD
   productGUID: 5a4e78c6f0d72264882d5e046d8975a8
+=======
+  productGUID: 6b0ab0ec88cf30f47bb76e0bf8cfcaec
+>>>>>>> Fabio
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
