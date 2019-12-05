@@ -18,16 +18,19 @@ public class RegistartionScript : MonoBehaviour
 
     public void Registration()
     {
-        UserLogin userLogin = new UserLogin();
-        if (Email.text.ToString() != "" && Username.text.ToString() != "" && Password.text.ToString() != "")
+        UserControl userControl = new UserControl();
+        if (Username.text.ToString() != "" && Password.text.ToString() != "")
         {
             if (Password.text.ToString() == ConfirmPassword.text.ToString())
             {
-                if (userLogin.SignUpUser(Email.text.ToString(), Password.text.ToString(), Username.text.ToString()))
+                if (userControl.Register(Username.text.ToString(), Password.text.ToString())=="Everything ok")
                 {
                     SceneManager.LoadScene(3);
                 }
-                SceneManager.LoadScene(3);
+                else
+                {
+                    Debug.Log("Username is used");
+                }
             }
         }
     }
