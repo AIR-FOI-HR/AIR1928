@@ -15,7 +15,7 @@ public class TurretControl
         return turret;
     }
 
-    public string GetTurretData(int id, string type)
+    private string GetTurretData(int id, string type)
     {
         using (WebClient client = new WebClient())
         {
