@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Database;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,10 @@ public class RegistartionScript : MonoBehaviour
 
     public void IdiNaPrijavu()
     {
-        SceneManager.LoadScene(2);
+        TurretControl tc = new TurretControl();
+        Turret p = tc.GetTurret(1);
+        Debug.Log(p.PrefabName);
+        //SceneManager.LoadScene(2);
     }
 
     public void Registration()
