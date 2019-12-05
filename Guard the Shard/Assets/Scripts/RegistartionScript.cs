@@ -14,8 +14,8 @@ public class RegistartionScript : MonoBehaviour
 
     public void IdiNaPrijavu()
     {
-        TurretControl tc = new TurretControl();
-        Turret p = tc.GetTurret(1);
+        EnemyControl tc = new EnemyControl();
+        Enemy p = tc.GetEnemy(1);
         Debug.Log(p.PrefabName);
         //SceneManager.LoadScene(2);
     }
