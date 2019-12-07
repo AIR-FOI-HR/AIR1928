@@ -66,8 +66,8 @@ public class PauseMenu : MonoBehaviour
     void Menu()
     {
         //Kada glavni izbornik bude napravljen biti će dodana navigacija
-        //SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-        //FindObjectOfType<AudioManagerController>().UnMuteAll();
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        FindObjectOfType<AudioManagerController>().UnMuteAll();
     }
     void Quit()
     {
