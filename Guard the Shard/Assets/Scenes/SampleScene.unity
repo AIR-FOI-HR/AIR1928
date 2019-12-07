@@ -151,7 +151,7 @@ RectTransform:
   m_Children:
   - {fileID: 1328601011}
   m_Father: {fileID: 613566140}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2086,17 +2086,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252466020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2220194, y: 1.2220194, z: 1.2220194}
   m_Children:
   - {fileID: 1849408818}
-  m_Father: {fileID: 613566140}
-  m_RootOrder: 0
+  m_Father: {fileID: 427681107}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60, y: -48}
+  m_AnchoredPosition: {x: -73.3212, y: -58.65694}
   m_SizeDelta: {x: 84.900024, y: 70.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252466022
@@ -3309,7 +3309,7 @@ GameObject:
   - component: {fileID: 427681105}
   - component: {fileID: 427681104}
   m_Layer: 5
-  m_Name: ScoreCanvas
+  m_Name: InGameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3387,6 +3387,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2003800898}
+  - {fileID: 252466021}
+  - {fileID: 1631118266}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4609,9 +4611,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 252466021}
   - {fileID: 8947680}
-  - {fileID: 1631118266}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4638,6 +4638,7 @@ MonoBehaviour:
   QuitButton: {fileID: 586943285}
   MenuButton: {fileID: 916851154}
   PauseButton: {fileID: 252466022}
+  InGameCanvas: {fileID: 427681106}
 --- !u!1 &618089432
 GameObject:
   m_ObjectHideFlags: 0
@@ -11475,7 +11476,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555224102}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -11524,7 +11525,7 @@ MonoBehaviour:
   ScoreUi: {fileID: 2003800900}
   PlayAgainButton: {fileID: 1018551763}
   GoToMenuButton: {fileID: 166098384}
-  PauseButton: {fileID: 252466020}
+  InGameCanvas: {fileID: 427681106}
   gameOverScreenUi: {fileID: 492163616}
   coverGameOver: {fileID: 1369365427}
   userResult: {fileID: 99034431}
@@ -11955,17 +11956,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631118265}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2220194, y: 1.2220194, z: 1.2220194}
   m_Children:
   - {fileID: 2012484886}
-  m_Father: {fileID: 613566140}
+  m_Father: {fileID: 427681107}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -324.6, y: -165.4}
+  m_AnchoredPosition: {x: -396.66754, y: -202.12201}
   m_SizeDelta: {x: 87.8, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631118267
@@ -13900,6 +13901,7 @@ MonoBehaviour:
   QuitButton: {fileID: 586943285}
   MenuButton: {fileID: 916851154}
   PauseButton: {fileID: 252466022}
+  InGameCanvas: {fileID: 0}
 --- !u!1 &1962729081
 GameObject:
   m_ObjectHideFlags: 0

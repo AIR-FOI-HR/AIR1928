@@ -14,7 +14,7 @@ public class GameOverScreen : MonoBehaviour
     public Text ScoreUi;
     public Button PlayAgainButton;
     public Button GoToMenuButton;
-    public GameObject PauseButton;
+    public Canvas InGameCanvas;
     // Start is called before the first frame update
     public GameObject gameOverScreenUi;
     public GameObject coverGameOver;
@@ -42,7 +42,7 @@ public class GameOverScreen : MonoBehaviour
         //Kada je igra gotovo zaustaviti igranje i prikazati game over screen -> optimizacija!
         if (gameOverScreenUi.activeSelf)
         {
-            PauseButton.SetActive(false);
+            InGameCanvas.enabled = false;
             Time.timeScale = 0f;
             userResult.text = "Your score: " + ScoreUi.text;
             gameOverScreenUi.SetActive(true);
@@ -61,6 +61,8 @@ public class GameOverScreen : MonoBehaviour
 
     public void GoToMenu()
     {
-        //kada main menu bude dodan dodati scene manager navigaciju
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        FindObjectOfType<AudioManagerController>().UnMuteAll();
+        //Pokretat ce se main menu theme muzika
     }
 }

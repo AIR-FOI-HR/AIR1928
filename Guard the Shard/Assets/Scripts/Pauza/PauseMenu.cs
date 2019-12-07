@@ -13,12 +13,15 @@ public class PauseMenu : MonoBehaviour
     public Button MenuButton;
     //button koji otvara menu
     public Button PauseButton;
+    public Canvas InGameCanvas;
+   
 
     
 
     // Start is called before the first frame update
     void Start()
     {
+        InGameCanvas.enabled = true;
         //Kod starta je menu u stanju resume - neaktivan
         Resume();
         //Event listener za pokretanje stanja pauze
@@ -39,8 +42,8 @@ public class PauseMenu : MonoBehaviour
         //Aktivira pause menu
         PauseMenuUI.SetActive(true);
         CoverPanel.SetActive(true);
-        
-        
+
+        InGameCanvas.enabled = false;
         //Zaustavlja igru
         Time.timeScale = 0f;
         //Event handleri za izbore u menu
@@ -59,15 +62,15 @@ public class PauseMenu : MonoBehaviour
         //Stanje igranja, nema pause menua i objekti se pomicu
         CoverPanel.SetActive(false);
         PauseMenuUI.SetActive(false);
-        
+        InGameCanvas.enabled = true;
         Time.timeScale = 1f;
         FindObjectOfType<AudioManagerController>().UnMuteAll();
     }
     void Menu()
     {
-        //Kada glavni izbornik bude napravljen biti će dodana navigacija
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
         FindObjectOfType<AudioManagerController>().UnMuteAll();
+        //Pokretat ce se main menu theme muzika
     }
     void Quit()
     {
