@@ -10,11 +10,13 @@ public class LoginScript : MonoBehaviour
     public InputField Email;
     public InputField Password;
 
+    //Prelazak na scenu registracije
     public void IdiNaRegistraciju()
     {
         SceneManager.LoadScene(1);
     }
 
+    //Prelazak na scenu glavnog izbornika ukoliko se dohvaćeni podaci podudaraju
     public void Login()
     {
         UserLogin userLogin = new UserLogin();
