@@ -10,6 +10,12 @@ public class NeprijateljFunction : MonoBehaviour
     public int worth = 50;
     //uzimanje štete
     public Scoring scorinScript;
+    //dohvaćanje parametara koji su došli s weba
+    public void GetParameters(float _health,int _worth)
+    {
+        health = _health;
+        worth = _worth;
+    }
     public void TakeDamage(float amount)
     {
         scorinScript = GameObject.Find("Score").GetComponent<Scoring>();

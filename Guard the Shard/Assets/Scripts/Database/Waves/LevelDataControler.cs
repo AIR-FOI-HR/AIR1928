@@ -13,7 +13,7 @@ public class LevelDataControler : MonoBehaviour
     //format u koji se spremaju podatci
     public AllLevelData allLevelData;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //inače postavi na vrijednost koju želiš
         levelID = 1;
@@ -21,6 +21,7 @@ public class LevelDataControler : MonoBehaviour
         jsonUrl = "https://airprojektunitygts.000webhostapp.com/Wave.php?level=";
         //Sama korutina
         processJsonData(GetWaveData(levelID));
+        /*
         foreach (EnemyListData item in allLevelData.enemies)
         {
             Debug.Log(item.EnePrefabName);
@@ -28,7 +29,7 @@ public class LevelDataControler : MonoBehaviour
         foreach (WaveData item in allLevelData.waves)
         {
             Debug.Log(item.Number);
-        }
+        }*/
     }
     //Sam zahtjev
     private string GetWaveData(int level)
