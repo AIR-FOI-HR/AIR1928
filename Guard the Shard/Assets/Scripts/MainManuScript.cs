@@ -39,7 +39,7 @@ public class MainManuScript : MonoBehaviour
     //Pokretanje Singeplayera
     public void PokreniSinglePlayer()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
     
 }
