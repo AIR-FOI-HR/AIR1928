@@ -6623,8 +6623,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 430229328}
   spawnPoint2: {fileID: 1481242855}
+  EnemiesAlive: 0
   timeBetweenWaves: 5
-  waveNumber: 0
+  waveNumber: 1
   currentListPos: 0
   scriptWithData: {fileID: 0}
   enemyPrefabList: []
@@ -16007,6 +16008,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neprijatelj
       objectReference: {fileID: 0}
+    - target: {fileID: 373422933627144956, guid: 495f44a4cddbbcb43bdd84639217c015,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 373422933627144898, guid: 495f44a4cddbbcb43bdd84639217c015,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16381,6 +16387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Neprijatelj
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160059521576450060, guid: 9032217d042f08c4d8aa9b0474af12a1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5160059521576450056, guid: 9032217d042f08c4d8aa9b0474af12a1,
         type: 3}

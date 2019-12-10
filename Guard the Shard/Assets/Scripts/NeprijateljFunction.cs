@@ -35,7 +35,16 @@ public class NeprijateljFunction : MonoBehaviour
         //u suprotnom će turret i danlje gađati ovaj objekt, stoga animaciju staviti u drugi objekt
         //nadodavanje score-a
         scorinScript.AddScore(worth);
+        SubtractFromEneNumber();
         //uništavanje objekta
         Destroy(gameObject);
+    }
+    void SubtractFromEneNumber()
+    {
+        EnemyStorySpawner spawner = GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();
+        if (spawner != null)
+        {
+            spawner.DecreaseEnemyCount();
+        }
     }
 }

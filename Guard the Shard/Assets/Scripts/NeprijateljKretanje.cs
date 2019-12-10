@@ -66,11 +66,21 @@ public class NeprijateljKretanje : MonoBehaviour
         {
             //uništenje
             baseHealth.TakeDamage();
+            SubtractFromEneNumber();
             Destroy(gameObject);
             return;
         }
         //prijelaz
         waypointIndex++;
         target = travelRoute[waypointIndex];
+    }
+    //oduzimanje 1 od broja neprijatelja u tom wave-u
+    void SubtractFromEneNumber()
+    {
+        EnemyStorySpawner spawner= GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();
+        if(spawner != null)
+        {
+            spawner.DecreaseEnemyCount();
+        }
     }
 }

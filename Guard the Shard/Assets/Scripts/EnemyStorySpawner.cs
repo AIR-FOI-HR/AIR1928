@@ -7,12 +7,14 @@ public class EnemyStorySpawner : MonoBehaviour
     //Lokacija izlaska neprijatelja
     public Transform spawnPoint;
     public Transform spawnPoint2;
+    //broj živih neprijatelja
+    public int EnemiesAlive=0;
     //vrijeme između valova
     public float timeBetweenWaves = 5f;
     //2 sec do prvog
     private float countdown = 2f;
     //broj vala
-    public int waveNumber = 0;
+    public int waveNumber = 1;
     //pozicija u listi neprijatelja
     public int currentListPos = 0;
     //skripta u kojoj se nalaze podatci levela
@@ -54,15 +56,19 @@ public class EnemyStorySpawner : MonoBehaviour
     }
     private void Update()
     {
+        //ako ima živih neprijatelja
+        if (EnemiesAlive > 0) return;
         //ako je odbrojavanje došlo do kraja
         if (countdown <= 0)
         {
             //Pošto se radi o storymode-u ako je došlo do kraj lista s valovima ništa se ne događa
-            if (ListofEnemies.Count < (waveNumber+1)) return;
+            if (ListofEnemies.Count < waveNumber) return;
+            EnemiesAlive = ListofEnemies[waveNumber - 1].Count;
             //stvori wave
             StartCoroutine(SpawnWave());
             //reset timera
             countdown = timeBetweenWaves + waveNumber;
+            return;
         }
         //odbrojavanje
         countdown -= Time.deltaTime;
@@ -70,7 +76,7 @@ public class EnemyStorySpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         //povećanje broj wavea za 1
-        waveNumber++;
+        //waveNumber++;
         //pozicija u listi neprijatelja za dani val se resetira
         currentListPos = 0;
         //stvareanje waveNumber neprijatelja
@@ -132,5 +138,20 @@ public class EnemyStorySpawner : MonoBehaviour
         }
         //povećanje current list pos tj pozicije za jedan kako bi znali kojeg neprijatelja stvoriti
         currentListPos++;
+    }
+    //kad neprijatelj ume što se događa
+    public void DecreaseEnemyCount()
+    {
+        EnemiesAlive--;
+        if(EnemiesAlive <= 0) {
+            Debug.Log("Wave Gotov");
+            waveNumber++;
+            if (waveNumber > ListofEnemies.Count)
+            {
+                // FABIO pozovi level victory screen tu
+                // ===========> Pozovi što već treba za kraj igre <===============
+                Debug.Log("Level je gotov :)");
+            }
+        }
     }
 }
