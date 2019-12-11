@@ -14,9 +14,9 @@ public class RegistartionScript : MonoBehaviour
 
     public void IdiNaPrijavu()
     {
-        EnemyControl tc = new EnemyControl();
-        Enemy p = tc.GetEnemy(1);
-        Debug.Log(p.PrefabName);
+        SkillControl tc = new SkillControl();
+        List<Skill> p = tc.GetSkills();
+        Debug.Log(p[0].Damage);
         //SceneManager.LoadScene(2);
     }
 
