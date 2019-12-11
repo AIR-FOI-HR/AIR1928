@@ -10,6 +10,8 @@ TagManager:
   - Usable
   - EarthEnemy
   - AirEnemy
+  - ScoreContainer
+  - ScoreTemplate
   layers:
   - Default
   - TransparentFX
