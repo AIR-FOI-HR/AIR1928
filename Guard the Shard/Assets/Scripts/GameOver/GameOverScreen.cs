@@ -26,12 +26,13 @@ public class GameOverScreen : MonoBehaviour
         btnPlayAgain.onClick.AddListener(PlayAgain);
         Button btnGoToMenu = GoToMenuButton.GetComponent<Button>();
         btnGoToMenu.onClick.AddListener(GoToMenu);
+        coverGameOver.SetActive(false);
+        gameOverScreenUi.SetActive(false);
     }
     //Na početku igranja screen je neaktivan
     void Start()
     {
-        coverGameOver.SetActive(false);
-        gameOverScreenUi.SetActive(false);
+      
         
     }
 
