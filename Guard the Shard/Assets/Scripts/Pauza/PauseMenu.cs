@@ -21,9 +21,11 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InGameCanvas.enabled = true;
+        //InGameCanvas.enabled = true;
         //Kod starta je menu u stanju resume - neaktivan
-        Resume();
+        //Resume();
+        CoverPanel.SetActive(false);
+        PauseMenuUI.SetActive(false);
         //Event listener za pokretanje stanja pauze
         Button btnPause = PauseButton.GetComponent<Button>();
         btnPause.onClick.AddListener(Pause);       
