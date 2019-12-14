@@ -4,10 +4,17 @@ using UnityEngine;
 
 namespace Assets.Scripts.Database
 { 
-    public class Score 
+    [System.Serializable]
+    public class Scores 
     {
         public int LevelID;
         public int UserID;
-        public int ScoreOnLevel;
+        public int Score;
+    }
+    [System.Serializable]
+    public class ScoresData
+    {
+        public List<Scores> Scores;
+
     }
 }

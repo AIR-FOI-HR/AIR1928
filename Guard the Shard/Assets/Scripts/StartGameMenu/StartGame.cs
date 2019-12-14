@@ -11,6 +11,7 @@ public class StartGame : MonoBehaviour
     public Button mainMenu;
     public Transform userHS;
     public Transform globalHS;
+    private ScoreControl scoreControl = new ScoreControl();
     
     void Awake()
     {
@@ -24,11 +25,12 @@ public class StartGame : MonoBehaviour
 
         userHS = GameObject.Find("UserHS").transform;
         Text userHsValue = userHS.GetComponent<Text>();
-        userHsValue.text = "Your highscore: \n 5000";
+        userHsValue.text = "YOUR HIGHSCORE: \n" + scoreControl.GetPlayerScore(1, 1).Score.ToString();
+        //userHsValue.text = "Your highscore: \n 5000";
 
         globalHS = GameObject.Find("GlobalHS").transform;
         Text globalHsValue = globalHS.GetComponent<Text>();
-        globalHsValue.text = "Global highscore: \n 10000";
+        globalHsValue.text = "GLOBAL HIGHSCORE: \n" + scoreControl.GetAllScores(1).Scores[0].Score.ToString();
 
         FindObjectOfType<UIElementManager>().Preview();
         

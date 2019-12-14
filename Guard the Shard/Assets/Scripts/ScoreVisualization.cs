@@ -8,7 +8,10 @@ public class ScoreVisualization : MonoBehaviour
    
     private Transform entryTemplate;
     private Transform entryContainer;
-   
+    private ScoreControl scoreControl = new ScoreControl();
+    private UserControl userControl = new UserControl();
+
+    
 
     void Awake()
     {
@@ -20,28 +23,35 @@ public class ScoreVisualization : MonoBehaviour
     void Start()
     {
         entryContainer = GameObject.Find("ScoreContainer").transform;
-        entryTemplate = GameObject.Find("ScoreTemplate").transform;
+        entryTemplate = GameObject.Find("ScoreTemplate").transform;     
 
         entryTemplate.gameObject.SetActive(false);
         float entryHeight = 20f;
 
-        for (int i = 0; i < 10; i++)
+        ScoresData scoresData = scoreControl.GetAllScores(1);
+
+        int i = 0;
+        foreach (var item in scoresData.Scores)
         {
             Transform entryTransform = Instantiate(entryTemplate, entryContainer);
             RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
             entryRectTransform.anchoredPosition = new Vector2(0, -entryHeight * i);
             entryTransform.gameObject.SetActive(true);
 
+         
             int rank = i + 1;
+            
             //inace ce se uzimati iz baze
-            string username = "user";
-            int score = Random.Range(0, 5000);
-
+            
+            int score = scoreControl.GetAllScores(1).Scores[i].Score;
+            int userId = scoreControl.GetAllScores(1).Scores[i].UserID;
+            string username = "Korisnik: " + userId.ToString();
 
             entryTransform.Find("MockPosition").GetComponent<Text>().text = rank.ToString();
             entryTransform.Find("MockScore").GetComponent<Text>().text = score.ToString();
             entryTransform.Find("MockName").GetComponent<Text>().text = username;
 
+            i++;
 
 
         }
