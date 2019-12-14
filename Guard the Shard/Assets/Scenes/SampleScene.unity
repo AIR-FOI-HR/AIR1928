@@ -3700,6 +3700,7 @@ GameObject:
   - component: {fileID: 412670002}
   - component: {fileID: 412670001}
   - component: {fileID: 412670005}
+  - component: {fileID: 412670006}
   m_Layer: 5
   m_Name: PreviewLevelCanvas
   m_TagString: Untagged
@@ -3804,7 +3805,22 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   userHS: {fileID: 0}
   globalHS: {fileID: 0}
-  inGameCanvas: {fileID: 0}
+--- !u!114 &412670006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412670000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fa862471e9f1840bf0062dbdf8923d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InGameCanvas: {fileID: 427681106}
+  PauseCanvas: {fileID: 613566139}
+  GameOverCanvas: {fileID: 1555224105}
+  LevelPreview: {fileID: 412670003}
 --- !u!1 &427681103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,6 +3833,8 @@ GameObject:
   - component: {fileID: 427681106}
   - component: {fileID: 427681105}
   - component: {fileID: 427681104}
+  - component: {fileID: 427681108}
+  - component: {fileID: 427681109}
   m_Layer: 5
   m_Name: InGameCanvas
   m_TagString: Untagged
@@ -3909,6 +3927,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &427681108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427681103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7315c873a74b944b0bb125d196a3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InGameCanvas: {fileID: 0}
+  PauseButton: {fileID: 0}
+  Score: {fileID: 0}
+--- !u!114 &427681109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427681103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fa862471e9f1840bf0062dbdf8923d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InGameCanvas: {fileID: 427681106}
+  PauseCanvas: {fileID: 613566139}
+  GameOverCanvas: {fileID: 1555224105}
+  LevelPreview: {fileID: 412670003}
 --- !u!1001 &437092617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5315,6 +5364,7 @@ GameObject:
   - component: {fileID: 613566138}
   - component: {fileID: 613566137}
   - component: {fileID: 613566141}
+  - component: {fileID: 613566142}
   m_Layer: 5
   m_Name: PauseMenuCanvas
   m_TagString: Untagged
@@ -5419,8 +5469,22 @@ MonoBehaviour:
   ResumeButton: {fileID: 1956981906}
   QuitButton: {fileID: 586943285}
   MenuButton: {fileID: 916851154}
-  PauseButton: {fileID: 252466022}
+--- !u!114 &613566142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613566136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fa862471e9f1840bf0062dbdf8923d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   InGameCanvas: {fileID: 427681106}
+  PauseCanvas: {fileID: 613566139}
+  GameOverCanvas: {fileID: 1555224105}
+  LevelPreview: {fileID: 412670003}
 --- !u!1 &618089432
 GameObject:
   m_ObjectHideFlags: 0
@@ -12828,6 +12892,7 @@ GameObject:
   - component: {fileID: 1555224104}
   - component: {fileID: 1555224103}
   - component: {fileID: 1555224107}
+  - component: {fileID: 1555224108}
   m_Layer: 5
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -12930,10 +12995,25 @@ MonoBehaviour:
   ScoreUi: {fileID: 2003800900}
   PlayAgainButton: {fileID: 1018551763}
   GoToMenuButton: {fileID: 166098384}
-  InGameCanvas: {fileID: 427681106}
-  gameOverScreenUi: {fileID: 492163616}
+  GameOverCanvas: {fileID: 0}
   coverGameOver: {fileID: 1369365427}
   userResult: {fileID: 99034431}
+--- !u!114 &1555224108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555224102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fa862471e9f1840bf0062dbdf8923d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InGameCanvas: {fileID: 427681106}
+  PauseCanvas: {fileID: 613566139}
+  GameOverCanvas: {fileID: 1555224105}
+  LevelPreview: {fileID: 412670003}
 --- !u!1 &1590895085
 GameObject:
   m_ObjectHideFlags: 0
@@ -15886,8 +15966,6 @@ MonoBehaviour:
   ResumeButton: {fileID: 1956981906}
   QuitButton: {fileID: 586943285}
   MenuButton: {fileID: 916851154}
-  PauseButton: {fileID: 252466022}
-  InGameCanvas: {fileID: 0}
 --- !u!1 &1962729081
 GameObject:
   m_ObjectHideFlags: 0
@@ -16394,7 +16472,7 @@ GameObject:
   - component: {fileID: 2003800899}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: ScoreUi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

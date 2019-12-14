@@ -12,6 +12,7 @@ TagManager:
   - AirEnemy
   - ScoreContainer
   - ScoreTemplate
+  - ScoreUi
   layers:
   - Default
   - TransparentFX

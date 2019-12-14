@@ -11,14 +11,10 @@ public class StartGame : MonoBehaviour
     public Button mainMenu;
     public Transform userHS;
     public Transform globalHS;
-    public Canvas inGameCanvas;
     
     void Awake()
     {
         previewCanvas = GameObject.Find("PreviewLevelCanvas").GetComponent<Canvas>();
-
-        inGameCanvas = GameObject.Find("InGameCanvas").GetComponent<Canvas>();
-        inGameCanvas.enabled = false;
 
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         playButton.onClick.AddListener(PlayLevel);
@@ -34,14 +30,14 @@ public class StartGame : MonoBehaviour
         Text globalHsValue = globalHS.GetComponent<Text>();
         globalHsValue.text = "Global highscore: \n 10000";
 
-        Time.timeScale = 0f;
+        FindObjectOfType<UIElementManager>().Preview();
         
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManagerController>().MuteAll();
+         
     }
 
     // Update is called once per frame
@@ -52,15 +48,13 @@ public class StartGame : MonoBehaviour
 
     void PlayLevel()
     {
-        FindObjectOfType<AudioManagerController>().UnMuteAll();
-        Time.timeScale = 1f;
-        inGameCanvas.enabled = true;
-        previewCanvas.enabled = false;
+        FindObjectOfType<UIElementManager>().PlayGame();
     }
 
     void Return()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
         FindObjectOfType<AudioManagerController>().UnMuteAll();
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        
     }
 }

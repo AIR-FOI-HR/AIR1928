@@ -5,29 +5,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
-{
-
-     
-    //Za potrebe testiranja se koristi property isGameOver, kasnije ce logika biti drugacije implementirana
-     
-    //hardcodirana vrijednost za potrebe testiranja
+{    
+  
     public Text ScoreUi;
     public Button PlayAgainButton;
     public Button GoToMenuButton;
-    public Canvas InGameCanvas;
-    // Start is called before the first frame update
-    public GameObject gameOverScreenUi;
+    public Canvas GameOverCanvas;
     public GameObject coverGameOver;
     public Text userResult;
-    //Dodati event listenere
+    
     void Awake()
     {
-        Button btnPlayAgain = PlayAgainButton.GetComponent<Button>();
-        btnPlayAgain.onClick.AddListener(PlayAgain);
-        Button btnGoToMenu = GoToMenuButton.GetComponent<Button>();
-        btnGoToMenu.onClick.AddListener(GoToMenu);
-        coverGameOver.SetActive(false);
-        gameOverScreenUi.SetActive(false);
+        //Pronalazak komponenti
+        GameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
+
+        PlayAgainButton = GameObject.Find("PlayAgainButton").GetComponent<Button>();
+        PlayAgainButton.onClick.AddListener(PlayAgain);
+
+        GoToMenuButton = GameObject.Find("GoToMainMenuButton").GetComponent<Button>();
+        GoToMenuButton.onClick.AddListener(GoToMenu);
+
+        userResult = GameObject.Find("GameOverScore").GetComponent<Text>();
     }
     //Na početku igranja screen je neaktivan
     void Start()
@@ -40,28 +38,23 @@ public class GameOverScreen : MonoBehaviour
     void Update()
     {
         
-        //Kada je igra gotovo zaustaviti igranje i prikazati game over screen -> optimizacija!
-        if (gameOverScreenUi.activeSelf)
-        {
-            InGameCanvas.enabled = false;
-            Time.timeScale = 0f;
-            userResult.text = "Your score: " + ScoreUi.text;
-            gameOverScreenUi.SetActive(true);
-            coverGameOver.SetActive(true);        
-            
-        }
+         
+         
     }
 
    void PlayAgain()
     {
+        //POnovna igra -> ponovno učitavanje scene 
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+        
 
 
     }
 
     public void GoToMenu()
     {
+        //Povratak na glavni izbornik
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
         FindObjectOfType<AudioManagerController>().UnMuteAll();
         //Pokretat ce se main menu theme muzika

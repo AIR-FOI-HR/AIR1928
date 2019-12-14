@@ -26,7 +26,7 @@ public class AudioManagerController : MonoBehaviour
     void Start()
     {
         //kod pokretanje igre pokreće se i glavna tema.
-        Play("MainTheme");
+        
         
     }
 
