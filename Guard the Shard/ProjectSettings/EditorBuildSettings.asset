@@ -9,20 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Registrtion.unity
-    guid: 60b8fc9235623074191ac056efa07f03
-  - enabled: 1
     path: Assets/Scenes/Login.unity
     guid: 717ff440e01cb8b4b951f3b983a69b39
+  - enabled: 1
+    path: Assets/Scenes/Registrtion.unity
+    guid: 60b8fc9235623074191ac056efa07f03
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 7d767e3896a11b043bfc0c1caa8212a8
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/Settings.unity
     guid: 9fe14abaaa3185741bea308411b3d74d
-=======
+  - enabled: 1
     path: Assets/Scenes/LevelMenu.unity
     guid: f1c0c8ec75e70774c8c20a8ed1f664ee
->>>>>>> Menu
   m_configObjects: {}
