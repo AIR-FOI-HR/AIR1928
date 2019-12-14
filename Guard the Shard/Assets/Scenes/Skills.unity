@@ -217,6 +217,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a07adfd1720b44883d94db46fa3a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tglTime: {fileID: 0}
+  tglIce: {fileID: 0}
+  tglStorm: {fileID: 0}
+  tglFire: {fileID: 0}
+  tglSwords: {fileID: 0}
+  tglStons: {fileID: 0}
   toggleGroup: {fileID: 822168534}
 --- !u!1 &51117226
 GameObject:
@@ -374,7 +380,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &233343345
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +591,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a07adfd1720b44883d94db46fa3a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tglTime: {fileID: 822949077}
+  tglIce: {fileID: 227470369}
+  tglStorm: {fileID: 1618552466}
+  tglFire: {fileID: 41042869}
+  tglSwords: {fileID: 1471890541}
+  tglStons: {fileID: 1155472045}
   toggleGroup: {fileID: 822168534}
 --- !u!1 &531236826
 GameObject:
@@ -893,6 +905,7 @@ GameObject:
   - component: {fileID: 679257405}
   - component: {fileID: 679257404}
   - component: {fileID: 679257403}
+  - component: {fileID: 679257406}
   m_Layer: 5
   m_Name: btnExit
   m_TagString: Untagged
@@ -961,7 +974,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 679257404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 417284486}
+        m_MethodName: Izlaz
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &679257404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +1022,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679257401}
   m_CullTransparentMesh: 0
+--- !u!114 &679257406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679257401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a07adfd1720b44883d94db46fa3a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tglTime: {fileID: 822949077}
+  tglIce: {fileID: 227470369}
+  tglStorm: {fileID: 1618552466}
+  tglFire: {fileID: 41042869}
+  tglSwords: {fileID: 1471890541}
+  tglStons: {fileID: 1155472045}
+  toggleGroup: {fileID: 822168534}
 --- !u!1 &810580729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1172,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a07adfd1720b44883d94db46fa3a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tglTime: {fileID: 0}
+  tglIce: {fileID: 0}
+  tglStorm: {fileID: 0}
+  tglFire: {fileID: 0}
+  tglSwords: {fileID: 0}
+  tglStons: {fileID: 0}
   toggleGroup: {fileID: 0}
 --- !u!1 &822949075
 GameObject:
@@ -1213,7 +1262,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1057746416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,7 +2022,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1677140039
 GameObject:
   m_ObjectHideFlags: 0

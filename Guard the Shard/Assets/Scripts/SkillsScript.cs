@@ -6,106 +6,89 @@ using UnityEngine.SceneManagement;
 
 public class SkillsScript : MonoBehaviour
 {
+    public Toggle tglTime;
+    public Toggle tglIce;
+    public Toggle tglStorm;
+    public Toggle tglFire;
+    public Toggle tglSwords;
+    public Toggle tglStons;
+
     public ToggleGroup toggleGroup;
-    private IEnumerable<Toggle> active;
 
     // Start is called before the first frame update
     void Start()
     {
-        active = toggleGroup.ActiveToggles();
-        foreach (var item in active)
+        SkillControl skillControl = new SkillControl();
+
+        foreach (var item in skillControl.GetUserSkills(20))
         {
-            Debug.Log("Tekst: " + item.name);
+            switch (item)
+            {
+                case 1:
+                    tglTime.isOn = true;
+                    break;
+                case 2:
+                    tglIce.isOn = true;
+                    break;
+                case 3:
+                    tglStorm.isOn = true;
+                    break;
+                case 4:
+                    tglFire.isOn = true;
+                    break;
+                case 5:
+                    tglSwords.isOn = true;
+                    break;
+                case 6:
+                    tglStons.isOn = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
-    public void OnOff()
+    public void Izlaz()
     {
-        /*if (PlayerPrefs.GetInt("vatra") == 1)
-        {
-            PlayerPrefs.SetInt("vatra", 0);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            PlayerPrefs.SetInt("vatra", 1);
-            PlayerPrefs.Save();
-        }*/
+        List<int> skills = new List<int>();
+
+        SkillControl skillControl = new SkillControl();
         IEnumerable<Toggle> active = toggleGroup.ActiveToggles();
         foreach (var item in active)
         {
-            Debug.Log("Tekst: " + item.name);
+            switch (item.name)
+            {
+                case "tglTime":
+                    skills.Add(1);
+                    break;
+                case "tglIce":
+                    skills.Add(2);
+                    break;
+                case "tglStorm":
+                    skills.Add(3);
+                    break;
+                case "tglFire":
+                    skills.Add(4);
+                    break;
+                case "tglSwords":
+                    skills.Add(5);
+                    break;
+                case "tglStons":
+                    skills.Add(6);
+                    break;
+                default:
+                    break;
+            }
         }
-    }
 
-    /*public void Vrijeme()
-    {
-        if (PlayerPrefs.GetInt("vrijeme") == 1)
+        if (skills.Count != 3)
         {
-            PlayerPrefs.SetInt("vrijeme", 0);
-            PlayerPrefs.Save();
         }
         else
         {
-            PlayerPrefs.SetInt("vrijeme", 1);
-            PlayerPrefs.Save();
+            skillControl.SetSkills(skills[1], skills[2], skills[3], 20);
+            //SceneManager.LoadScene(3);
         }
     }
-
-    public void Led()
-    {
-        if (PlayerPrefs.GetInt("led") == 1)
-        {
-            PlayerPrefs.SetInt("led", 0);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            PlayerPrefs.SetInt("led", 1);
-            PlayerPrefs.Save();
-        }
-    }
-
-    public void Kamen()
-    {
-        if (PlayerPrefs.GetInt("kamen") == 1)
-        {
-            PlayerPrefs.SetInt("kamen", 0);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            PlayerPrefs.SetInt("kamen", 1);
-            PlayerPrefs.Save();
-        }
-    }
-
-    public void Macevi()
-    {
-        if (PlayerPrefs.GetInt("mac") == 1)
-        {
-            PlayerPrefs.SetInt("mac", 0);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            PlayerPrefs.SetInt("mac", 1);
-            PlayerPrefs.Save();
-        }
-    }
-
-    public void Munje()
-    {
-        if (PlayerPrefs.GetInt("munje") == 1)
-        {
-            PlayerPrefs.SetInt("munje", 0);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            PlayerPrefs.SetInt("munje", 1);
-            PlayerPrefs.Save();
-        }
-    }*/
 
 }

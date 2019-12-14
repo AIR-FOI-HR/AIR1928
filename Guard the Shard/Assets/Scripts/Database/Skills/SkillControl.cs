@@ -40,6 +40,15 @@ public class SkillControl
         }
         
     }
+
+    public List<int> GetUserSkills (int userId)
+    {
+        List<int> skills = new List<int>();
+        skills.Add(1);
+        skills.Add(2);
+        skills.Add(3);
+        return skills;
+    }
 }
 
 
