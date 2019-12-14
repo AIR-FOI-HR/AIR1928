@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Database;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,23 +16,29 @@ public class RegistartionScript : MonoBehaviour
     //Prelazak na scenu prijave
     public void IdiNaPrijavu()
     {
-        SceneManager.LoadScene(2);
+        SkillControl tc = new SkillControl();
+        List<Skill> p = tc.GetSkills();
+        Debug.Log(p[0].Damage);
+        //SceneManager.LoadScene(2);
     }
 
     //Potvrda registracije ukoliko su sva polja ispravno popunjena
     //Prelazak na scenu glavnog izbornika
     public void Registration()
     {
-        UserLogin userLogin = new UserLogin();
-        if (Email.text.ToString() != "" && Username.text.ToString() != "" && Password.text.ToString() != "")
+        UserControl userControl = new UserControl();
+        if (Username.text.ToString() != "" && Password.text.ToString() != "")
         {
             if (Password.text.ToString() == ConfirmPassword.text.ToString())
             {
-                if (userLogin.SignUpUser(Email.text.ToString(), Password.text.ToString(), Username.text.ToString()))
+                if (userControl.Register(Username.text.ToString(), Password.text.ToString())=="Everything ok")
                 {
                     SceneManager.LoadScene(3);
                 }
-                SceneManager.LoadScene(3);
+                else
+                {
+                    Debug.Log("Username is used");
+                }
             }
         }
     }

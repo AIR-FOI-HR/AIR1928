@@ -11,12 +11,20 @@ public class NeprijateljKretanje : MonoBehaviour
     private int waypointIndex = 0;
     //za svrhe oduzimanja bodova na kraju puta
     public BaseHealth baseHealth;
+    //1 za rutu a 2 za rutu 2
+    public int route = 1;
     //============> put koji se prati mijenjati po potrebi !!!!!! <========
     //zasad je stavljeno na prvi put tj points1 (može se promijeniti na points2 ako je želi drugi put)
     public Waypoints movement;
     //ruta za kretanje pogledaj start za nastavak
     public List<Transform> travelRoute;
     //
+    public void GetParameters(float _speed,int _route)
+    {
+        speed = _speed;
+        route = _route;
+    }
+
 
     void Start()
     {
@@ -25,7 +33,16 @@ public class NeprijateljKretanje : MonoBehaviour
         movement = GameObject.Find("Waypoints").GetComponent<Waypoints>();
         //============> put koji se prati mijenjati po potrebi !!!!!! <========
         //zasad je stavljeno na prvi put tj points1 (može se promijeniti na points2 ako je želi drugi put)
-        travelRoute = movement.points1;
+        switch (route)
+        {
+            case 1:
+                travelRoute = movement.points1;
+                break;
+            case 2:
+                travelRoute = movement.points2;
+                break;
+        }
+        //travelRoute = movement.points1;
         //inicijalno postavljanje mete
         target = travelRoute[0];
     }
@@ -49,11 +66,21 @@ public class NeprijateljKretanje : MonoBehaviour
         {
             //uništenje
             baseHealth.TakeDamage();
+            SubtractFromEneNumber();
             Destroy(gameObject);
             return;
         }
         //prijelaz
         waypointIndex++;
         target = travelRoute[waypointIndex];
+    }
+    //oduzimanje 1 od broja neprijatelja u tom wave-u
+    void SubtractFromEneNumber()
+    {
+        EnemyStorySpawner spawner= GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();
+        if(spawner != null)
+        {
+            spawner.DecreaseEnemyCount();
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TurretAttacking : MonoBehaviour
 {
     //meta
@@ -16,12 +16,32 @@ public class TurretAttacking : MonoBehaviour
     public float fireRate = 1f;
     //instanciranje countdowna
     private float fireCountdown = 0f;
-    //varijable koje drze objekte prvi za metak drugi za poziciju odakle kreće metak
+    //varijable koje drze objekte prvi za metak
     public GameObject bulletPrefab;
+    //brzina metka
+    public float bulletSpeed= 10f;
+    //za poziciju odakle kreće metak
     public Transform firePoint;
+    //button za zamjenu turretta
+    public Button changeButton;
+    //Komponenta koja sadržava sve podatke koji nam trebaju
+    public LevelDataControler scriptWithData;
+    void Awake()
+    {
+        //na klik gumba za promjenu se mijenja turreta
+        changeButton.onClick.AddListener(TypeChange);
+
+    }
     // Start is called before the first frame update
     void Start()
     {
+        //dohvaćanje skripte koja sadržava dohvaćene podatke s interneta
+        scriptWithData = GameObject.Find("DataHandler").GetComponent<LevelDataControler>();
+        //postavljanje tih podataka
+        range = scriptWithData.allLevelData.TurDmgRange;
+        damage = scriptWithData.allLevelData.TurDamage;
+        fireRate = scriptWithData.allLevelData.TurAttSp;
+        bulletSpeed = scriptWithData.allLevelData.BullSpeed;
         //pozivanje UpdateTarget 2 puta u sekundi
         InvokeRepeating("UpdateTarget", 0f, 0.2f);
     }
@@ -107,7 +127,7 @@ public class TurretAttacking : MonoBehaviour
         //ako je bullet postavljen prosljedi metu
         if(bullet != null)
         {
-            bullet.Seek(target,type,damage);
+            bullet.Seek(target,type,damage, bulletSpeed);
         }
     }
     //Gizmos da mozemo vit radijus u kojem se gađa

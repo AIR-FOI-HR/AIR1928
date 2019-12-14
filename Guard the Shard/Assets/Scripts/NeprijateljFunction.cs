@@ -10,6 +10,12 @@ public class NeprijateljFunction : MonoBehaviour
     public int worth = 50;
     //uzimanje štete
     public Scoring scorinScript;
+    //dohvaćanje parametara koji su došli s weba
+    public void GetParameters(float _health,int _worth)
+    {
+        health = _health;
+        worth = _worth;
+    }
     public void TakeDamage(float amount)
     {
         scorinScript = GameObject.Find("Score").GetComponent<Scoring>();
@@ -29,7 +35,16 @@ public class NeprijateljFunction : MonoBehaviour
         //u suprotnom će turret i danlje gađati ovaj objekt, stoga animaciju staviti u drugi objekt
         //nadodavanje score-a
         scorinScript.AddScore(worth);
+        SubtractFromEneNumber();
         //uništavanje objekta
         Destroy(gameObject);
+    }
+    void SubtractFromEneNumber()
+    {
+        EnemyStorySpawner spawner = GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();
+        if (spawner != null)
+        {
+            spawner.DecreaseEnemyCount();
+        }
     }
 }

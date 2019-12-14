@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Scoring : MonoBehaviour
 {
+    public Text ScoreUi;
     //score je 0 na početku
     public float score = 0;
     //varijabla koja će čuvati zadnji 
@@ -33,6 +35,7 @@ public class Scoring : MonoBehaviour
         else { 
             score += amount; 
         }
+        ScoreUi.text = score.ToString();
         //Debug.Log(elapsed);
     }
 }

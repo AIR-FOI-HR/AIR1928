@@ -8,10 +8,11 @@ public class Bullet : MonoBehaviour
     //šteta koja se nanosi po udarcu
     public float damage;
     //Samo za prijenos parametra
-    public void Seek(Transform _target, string type, float _damage)
+    public void Seek(Transform _target, string type, float _damage, float _speed)
     {
         target = _target;
         damage = _damage;
+        speed = _speed;
         //gašenje slike metka koji ne odgovara tipu
         if(type != "ground")
             transform.Find("GroundBullet").gameObject.SetActive(false);
