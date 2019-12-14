@@ -16,10 +16,7 @@ public class RegistartionScript : MonoBehaviour
     //Prelazak na scenu prijave
     public void IdiNaPrijavu()
     {
-        SkillControl tc = new SkillControl();
-        List<Skill> p = tc.GetSkills();
-        Debug.Log(p[0].Damage);
-        //SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
     }
 
     //Potvrda registracije ukoliko su sva polja ispravno popunjena

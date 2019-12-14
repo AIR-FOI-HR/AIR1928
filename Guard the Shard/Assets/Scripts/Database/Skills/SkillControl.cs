@@ -29,6 +29,17 @@ public class SkillControl
             return htmlCode;
         }
     }
+
+    public void SetSkills(int skill1, int skill2, int skill3, int userId)
+    {
+        using (WebClient client = new WebClient())
+        {
+            string link = $"https://airprojektunitygts.000webhostapp.com/skill.php?type=setSkills&skill1={skill1}&" +
+            $"skill2={skill2}&skill3={skill3}&userId={userId}";
+            string htmlCode = client.DownloadString(link);
+        }
+        
+    }
 }
 
 
