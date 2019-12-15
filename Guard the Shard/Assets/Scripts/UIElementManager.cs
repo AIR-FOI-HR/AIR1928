@@ -9,7 +9,7 @@ public class UIElementManager : MonoBehaviour
     public Canvas PauseCanvas;
     public Canvas GameOverCanvas;
     public Canvas LevelPreview;
-    public ScoreControl scoreControl;
+    public ScoreControl scoreControl = new ScoreControl();
     // Start is called before the first frame update
     void Awake()
     {
@@ -76,8 +76,11 @@ public class UIElementManager : MonoBehaviour
         PauseCanvas.enabled = false;
 
         Time.timeScale = 0f;
-        //scoreControl.writeScore(1, 1, int.Parse(score));
+        scoreControl.writeScore(1, 1, int.Parse(score));
+       
         FindObjectOfType<GameOverScreen>().userResult.text = "Your score: " + score;
+        FindObjectOfType<ScoreVisualization>().Visualize();
+        //Debug.Log(FindObjectOfType<GameOverScreen>().userResult.text);
 
     }
 }

@@ -51,52 +51,70 @@ public class ScoreControl
     }
 
     public void writeScore(int levelId, int userId, int scoreOnLevel)
-    {
+    {        
         string web = GetPlayerScoreData(levelId, userId, "getPlayerHS");
-        Scores score = JsonUtility.FromJson<Scores>(web);
-        if (score.Score < scoreOnLevel)
+        string type;
+        
+        //korisnik već ima rezulatat i zadovoljava da je HS
+        if (web.Length > 0)
         {
-            Debug.Log("Velik score");
-            string type = "writeScore";
-            using (WebClient client = new WebClient())
+            type = "updatePlayerHS";
+            Scores score = JsonUtility.FromJson<Scores>(web);
+            if (score.Score < scoreOnLevel)
             {
-                string link = $"https://airprojektunitygts.000webhostapp.com/HS.php?LevelID={levelId}&UserID={userId}&Score={scoreOnLevel}&type={type}";
+                Debug.Log("Velik score");
+
+                using (WebClient client = new WebClient())
+                {
+                    string link = $"https://airprojektunitygts.000webhostapp.com/HS.php?LevelID={levelId}&UserID={userId}&Score={scoreOnLevel}&type={type}";
+                    string htmlCode = client.DownloadString(link);
+                }
             }
+            //rezultat nije Hs
+            else
+            {
+                Debug.Log("Premal score");
+            }
+        //prvi score korisnika
         }
         else
         {
-            Debug.Log("Premal score");
+            type = "writeScore";
+            Debug.Log("Prvi Score");
+            using (WebClient client = new WebClient())
+            {
+                string link = $"https://airprojektunitygts.000webhostapp.com/HS.php?LevelID={levelId}&UserID={userId}&Score={scoreOnLevel}&type={type}";
+                string htmlCode = client.DownloadString(link);
+            }
+
         }
+
+        
+        
     }
 
-    public static class JsonHelper
+    public User GetUsername(int userId)
     {
-        public static T[] FromJson<T>(string json)
-        {
-            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
-            return wrapper.Items;
-        }
+        string web = GetUsernameData(userId, "getPlayerUsername");
 
-        public static string ToJson<T>(T[] array)
-        {
-            Wrapper<T> wrapper = new Wrapper<T>();
-            wrapper.Items = array;
-            return JsonUtility.ToJson(wrapper);
-        }
+        User user = JsonUtility.FromJson<User>(web);
+        Debug.Log(user.Username);
+        return user;
+    }
 
-        public static string ToJson<T>(T[] array, bool prettyPrint)
-        {
-            Wrapper<T> wrapper = new Wrapper<T>();
-            wrapper.Items = array;
-            return JsonUtility.ToJson(wrapper, prettyPrint);
-        }
+    private string GetUsernameData(int userId, string type)
+    {
 
-        [Serializable]
-        private class Wrapper<T>
+        using (WebClient client = new WebClient())
         {
-            public T[] Items;
+
+            string link = $"https://airprojektunitygts.000webhostapp.com/HS.php?LevelID={1}&UserID={userId}&Score={0}&type={type}";
+            string htmlCode = client.DownloadString(link);
+
+            return htmlCode;
         }
     }
+
 
 
 }
