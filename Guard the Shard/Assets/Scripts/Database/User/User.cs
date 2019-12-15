@@ -11,5 +11,6 @@ namespace Assets.Scripts.Database
         public int ID;
         public string Username;
         public int XP;
+        public int Level;
     }
 }

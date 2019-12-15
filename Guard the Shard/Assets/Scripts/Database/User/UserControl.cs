@@ -31,4 +31,15 @@ public class UserControl
             return htmlCode;
         }
     }
+
+    public User GetUser(int userId)
+    {
+        using (WebClient client = new WebClient())
+        {
+            string link = $"https://airprojektunitygts.000webhostapp.com/user.php?type=getUser&userId={userId}";
+            string htmlCode = client.DownloadString(link);
+            User user = JsonUtility.FromJson<User>(htmlCode);
+            return user;
+        }
+    }
 }
