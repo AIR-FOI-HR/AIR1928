@@ -11,6 +11,7 @@ public class AllLevelData
     public float TurDmgRange;
     public float TurDamage;
     public List<EnemyListData> enemies;
+    public List<SkillData> skill;
     public List<WaveData> waves;
 }
 
@@ -32,4 +33,14 @@ public class WaveData
     public int Enemy;
     public int Number;
     public int TimerAfterWave;
+}
+
+[Serializable]
+public class SkillData
+{
+    public float RangeSkill;
+    public int Damage;
+    public float SlowSkill;
+    public string PrefabName;
+    public float Duration;
 }
