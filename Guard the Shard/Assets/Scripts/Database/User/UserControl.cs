@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class UserControl
@@ -40,6 +41,16 @@ public class UserControl
             string htmlCode = client.DownloadString(link);
             User user = JsonUtility.FromJson<User>(htmlCode);
             return user;
+        }
+    }
+
+    public async Task SetUserLevel(int userId, int level)
+    {
+        using (WebClient client = new WebClient())
+        {
+            string link = $"https://airprojektunitygts.000webhostapp.com/user.php?type=setUserLevel&userId={userId}&level={level}";
+            string htmlCode = client.DownloadString(link);
+            return;
         }
     }
 }

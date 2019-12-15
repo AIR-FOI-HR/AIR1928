@@ -16,8 +16,6 @@ public class RegistartionScript : MonoBehaviour
     //Prelazak na scenu prijave
     public void IdiNaPrijavu()
     {
-        UserControl uc = new UserControl();
-        User u = uc.GetUser(20);
         SceneManager.LoadScene(2);
     }
 
