@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class BaseHealth : MonoBehaviour
 {
     public int LivesLeft = 5;
-    public GameObject gameOverScreen;
+    
+    
+    void Awake()
+    {
+        
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +21,14 @@ public class BaseHealth : MonoBehaviour
     //Uzimanje štete kad je neprijatelj došao do kraja svog puta
     public void TakeDamage()
     {
+         
         //oduzima se jedan život
         LivesLeft--;
         //ako smo ostali bez života
         if (LivesLeft <= 0)
         {
-            gameOverScreen.SetActive(true);
+            string score = FindObjectOfType<InGameEventMaanger>().Score.GetComponent<Text>().text;
+            FindObjectOfType<UIElementManager>().GameOver(score);
             //Game over and shit
         }
     }
