@@ -44,9 +44,16 @@ public class SkillControl
     public List<int> GetUserSkills (int userId)
     {
         List<int> skills = new List<int>();
-        skills.Add(1);
-        skills.Add(2);
-        skills.Add(3);
+        using (WebClient client = new WebClient())
+        {
+            string link = $"https://airprojektunitygts.000webhostapp.com/skill.php?type=getUserSkills&userId={userId}";
+            string htmlCode = client.DownloadString(link);
+            string[] htmlSplit = htmlCode.Split('|');
+            foreach (string s in htmlSplit)
+            {
+                skills.Add(Int32.Parse(s));
+            }
+        }
         return skills;
     }
 }
