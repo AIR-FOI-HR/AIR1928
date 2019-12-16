@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    float range = 2f;
-    float damage = 5;
+    //parametri vještine
     float lifetime = 1;
-    //GameObject[] enemiesAir = null;
-    //GameObject[] enemiesGround = null;
+    float SkillRange = 0;
+    int SkillDamage = 0;
+    float SkillSlow = 0;
+    float SKillDuration = 0;
+    //lista neprijatelja nad kojima treba nešto napraviti
     public List<GameObject> Targets = new List<GameObject>();
     void Awake()
     {
+        //uništavanje nakon lifetime sekundi
         Destroy(gameObject, lifetime);
     }
     private void Start()
@@ -19,6 +22,7 @@ public class Fireball : MonoBehaviour
         GetAllEnemies();
         DoEfect();
     }
+    //stavljanje svih neprijatelja koji su u radijusu u listu
     void GetAllEnemies()
     {
         GameObject[] enemiesAir = null;
@@ -29,7 +33,7 @@ public class Fireball : MonoBehaviour
         {
             //provjera udaljenosti
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < range)
+            if (distanceToEnemy < SkillRange)
             {
                 Targets.Add(enemy);
             }
@@ -38,17 +42,27 @@ public class Fireball : MonoBehaviour
         {
             //provjera udaljenosti
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < range)
+            if (distanceToEnemy < SkillRange)
             {
                 Targets.Add(enemy);
             }
         }
     }
+    //samo aktiviranje efekta vještine nad neprijateljima
     public void DoEfect()
     {
         foreach (GameObject enemy in Targets)
         {
-            enemy.GetComponent<NeprijateljFunction>().TakeDamage(damage);
+            enemy.GetComponent<NeprijateljFunction>().TakeDamage(SkillDamage);
+            if (SkillSlow != 0) enemy.GetComponent<NeprijateljKretanje>().SlowEnemy(SkillSlow, SKillDuration);
         }
+    }
+    //dohvata parametara
+    public void GetParameters(float range, int damage, float slow, float duration)
+    {
+        SkillRange = range;
+        SkillDamage = damage;
+        SkillSlow = slow;
+        SKillDuration = duration;
     }
 }

@@ -9381,6 +9381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LastClickPosition: {x: 0, y: 0, z: 0}
   skillToUSe: 0
+  Enabled: 1
   scriptWithData: {fileID: 0}
 --- !u!4 &1169703098
 Transform:
