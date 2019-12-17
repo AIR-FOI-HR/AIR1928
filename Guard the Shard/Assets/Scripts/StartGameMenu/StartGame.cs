@@ -11,6 +11,11 @@ public class StartGame : MonoBehaviour
     public Button mainMenu;
     public Transform userHS;
     public Transform globalHS;
+    private Button firstSkill;
+    private Button secondSkill;
+    private Button thirdSkill;
+    private Button fourthSkill;
+    private Button fifthSkill;
     private ScoreControl scoreControl = new ScoreControl();
     
     void Awake()
@@ -18,6 +23,7 @@ public class StartGame : MonoBehaviour
         previewCanvas = GameObject.Find("PreviewLevelCanvas").GetComponent<Canvas>();
 
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
+        
         playButton.onClick.AddListener(PlayLevel);
 
         mainMenu = GameObject.Find("ReturnButton").GetComponent<Button>();
@@ -31,6 +37,13 @@ public class StartGame : MonoBehaviour
         globalHS = GameObject.Find("GlobalHS").transform;
         Text globalHsValue = globalHS.GetComponent<Text>();
         globalHsValue.text = "GLOBAL HIGHSCORE: \n" + scoreControl.GetAllScores(1).Scores[0].Score.ToString();
+
+        firstSkill = GameObject.Find("FireSkillButton").GetComponent<Button>();
+        secondSkill = GameObject.Find("FreezeSkillButton").GetComponent<Button>();
+        thirdSkill = GameObject.Find("ThunderSkillButton").GetComponent<Button>();
+        fourthSkill = GameObject.Find("RockSkillButton").GetComponent<Button>();
+        fifthSkill = GameObject.Find("TimeSkillButton").GetComponent<Button>();
+ 
 
         FindObjectOfType<UIElementManager>().Preview();
         
@@ -58,5 +71,10 @@ public class StartGame : MonoBehaviour
         FindObjectOfType<AudioManagerController>().UnMuteAll();
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
         
+    }
+
+    public void SkillSelector(Button skill)
+    {
+
     }
 }
