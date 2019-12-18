@@ -16,7 +16,7 @@ public class ChangeSpriteButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        changeButton.GetComponent<Image>().sprite = aerialSprite;
+        changeButton.GetComponent<Image>().sprite = groundSprite;
     }
 
     // Update is called once per frame

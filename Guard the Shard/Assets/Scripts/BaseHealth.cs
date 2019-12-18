@@ -24,12 +24,13 @@ public class BaseHealth : MonoBehaviour
          
         //oduzima se jedan život
         LivesLeft--;
+        FindObjectOfType<ScaleHealth>().Scale(LivesLeft);
         //ako smo ostali bez života
         if (LivesLeft <= 0)
         {
             string score = FindObjectOfType<InGameEventMaanger>().Score.GetComponent<Text>().text;
             FindObjectOfType<UIElementManager>().GameOver(score);
-            //Game over and shit
+            
         }
     }
 }
