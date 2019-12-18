@@ -6,20 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenuScript : MonoBehaviour
 {
-    /*public Button btnExit;
-    public Button btnLvl1;
-    public Button btnLvl2;
-    public Button btnLvl3;
-    public Button btnLvl4;
-    public Button btnLvl5;
-    public Button btnLvl6;
-    public Button btnLvl7;
-    public Button btnLvl8;*/
+    public Button btnExit;
+    public Button[] btnLvl;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UserControl userControl = new UserControl();
+        for (int i = 0; i < userControl.GetUser(20).Level; i++)
+        {
+            btnLvl[i].interactable = true;
+        }
     }
 
     public void IdinaLevel()
