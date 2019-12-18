@@ -5,6 +5,10 @@ public class NeprijateljKretanje : MonoBehaviour
 {
     //brzina
     public float speed = 10f;
+    //početna brzina
+    public float initalSpeed = 0;
+    //vrijeme speed debuf-a
+    private float countdown = 0f;
     //trenutna meta za kretanje
     private Transform target;
     //postavka indeksa na 0 kao uvjet za ostalo
@@ -22,6 +26,7 @@ public class NeprijateljKretanje : MonoBehaviour
     public void GetParameters(float _speed,int _route)
     {
         speed = _speed;
+        initalSpeed = _speed;
         route = _route;
     }
 
@@ -58,6 +63,20 @@ public class NeprijateljKretanje : MonoBehaviour
         {
             GetNextWaypoint();
         }
+        //ako je vrijeme slow-a isteklo
+        if (countdown <= 0)
+        {
+            //ako je vrati brzinu na početnu
+            if(speed != initalSpeed)
+            {
+                speed = initalSpeed;
+            }
+        }
+        else
+        {
+            //ako nije smani ga
+            countdown -= Time.deltaTime;
+        }
     }
     void GetNextWaypoint()
     {
@@ -82,5 +101,17 @@ public class NeprijateljKretanje : MonoBehaviour
         {
             spawner.DecreaseEnemyCount();
         }
+    }
+    //usporavanje neprijatelja
+    public void SlowEnemy(float precentage, float duration)
+    {
+        //pretvaranje u postotak
+        float toSlowBy = precentage / 100;
+        //da ne dobijemo gluposti
+        if (toSlowBy > 1) toSlowBy = 1;
+        //smanji brzinu
+        speed = initalSpeed * toSlowBy;
+        //postavljanje timera jednakog duljini u sekundama
+        countdown = duration;
     }
 }

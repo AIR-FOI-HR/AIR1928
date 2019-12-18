@@ -27,7 +27,6 @@ public class NeprijateljFunction : MonoBehaviour
             Die();
         }
     }
-
     private void Die()
     {
         //===========> TO DO: tu animacije za smrt <===================
@@ -39,6 +38,7 @@ public class NeprijateljFunction : MonoBehaviour
         //uništavanje objekta
         Destroy(gameObject);
     }
+    //skripta koja oduzima 1 od broja neprijatelja kako bi znali kad je val zavrsio
     void SubtractFromEneNumber()
     {
         EnemyStorySpawner spawner = GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();

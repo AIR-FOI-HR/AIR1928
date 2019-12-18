@@ -10,9 +10,13 @@ TagManager:
   - Usable
   - EarthEnemy
   - AirEnemy
+<<<<<<< HEAD
   - ScoreContainer
   - ScoreTemplate
   - ScoreUi
+=======
+  - SkillArea
+>>>>>>> 5.15-vještine-korištenje
   layers:
   - Default
   - TransparentFX
