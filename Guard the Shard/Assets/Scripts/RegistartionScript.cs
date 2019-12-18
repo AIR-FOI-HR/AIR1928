@@ -24,12 +24,16 @@ public class RegistartionScript : MonoBehaviour
     public void Registration()
     {
         UserControl userControl = new UserControl();
+        int user = userControl.Register(Username.text.ToString(), Password.text.ToString());
+
         if (Username.text.ToString() != "" && Password.text.ToString() != "")
         {
             if (Password.text.ToString() == ConfirmPassword.text.ToString())
             {
-                if (userControl.Register(Username.text.ToString(), Password.text.ToString())=="Everything ok")
+                if (user != 0)
                 {
+                    PlayerPrefs.SetInt("userid", user);
+                    PlayerPrefs.Save();
                     SceneManager.LoadScene(3);
                 }
                 else
