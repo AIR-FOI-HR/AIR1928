@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Database;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,9 +20,13 @@ public class LoginScript : MonoBehaviour
     //Prelazak na scenu glavnog izbornika ukoliko se dohvaćeni podaci podudaraju
     public void Login()
     {
-        UserLogin userLogin = new UserLogin();
-        if(userLogin.SignInUser(Email.text.ToString(), Password.text.ToString()))
+        UserControl userControl = new UserControl();
+        User user = userControl.Login(Email.text.ToString(), Password.text.ToString());
+
+        if (user != null)
         {
+            PlayerPrefs.SetInt("userid", user.ID);
+            PlayerPrefs.Save();
             SceneManager.LoadScene(3);
         }
     }
