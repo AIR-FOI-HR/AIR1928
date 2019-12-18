@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireballHandler : MonoBehaviour, ISkillInterface
 {
     //parametri koji su preneseni i dalje se prenose
-    int cost = 5;
+    int cost = 30;
     float SkillRange = 0;
     int SkillDamage = 0;
     float SkillSlow = 0;
@@ -15,10 +15,10 @@ public class FireballHandler : MonoBehaviour, ISkillInterface
     //dedukcija energije iz objekta
     public bool DeductCost(int cost)
     {
-        int usableEnergy = GameObject.Find("EnergyHandler").GetComponent<EnergyHandlerScript>().Energy;
+        float usableEnergy = GameObject.Find("EnergyContainer").GetComponent<Energy>().currentEnergy;
         if(usableEnergy >= cost)
         {
-            GameObject.Find("EnergyHandler").GetComponent<EnergyHandlerScript>().Deduct(cost);
+            GameObject.Find("EnergyContainer").GetComponent<Energy>().Deduct(cost);
             return true;
         }
         return false;

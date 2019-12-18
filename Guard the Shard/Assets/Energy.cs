@@ -40,7 +40,7 @@ public class Energy : MonoBehaviour
             //raycasting
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, Vector2.zero);
-            Debug.Log(hits.Length);
+            //Debug.Log(hits.Length);
             GameObject crystal = RaycastElemnt("Crystal(Clone)",hits);
             if (crystal != null)
             {
@@ -60,5 +60,17 @@ public class Energy : MonoBehaviour
             currentEnergy = currentEnergy + amount;
         }
         EnergyBarScript.Scale(currentEnergy);
+    }
+    public void Deduct(int cost)
+    {
+        if ((currentEnergy - cost) < 0)
+        {
+            currentEnergy = 0;
+        }
+        else
+        {
+            currentEnergy = currentEnergy - cost;
+        }
+        EnergyBarScript.Scale((float)currentEnergy);
     }
 }

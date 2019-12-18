@@ -41,6 +41,7 @@ public class NeprijateljFunction : MonoBehaviour
     }
     void SubtractFromEneNumber()
     {
+        if (GameObject.Find("WaveSpawnerStoryMode") == null) return;
         EnemyStorySpawner spawner = GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();
         if (spawner != null)
         {
