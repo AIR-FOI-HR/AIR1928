@@ -8,6 +8,8 @@ public class LevelDataControler : MonoBehaviour
 {
     //level koji je pokrenut
     public int levelID;
+    //id korisnika
+    public int userID;
     //adresa na koju se šalje zahhtjev
     public string jsonUrl;
     //format u koji se spremaju podatci
@@ -17,10 +19,11 @@ public class LevelDataControler : MonoBehaviour
     {
         //inače postavi na vrijednost koju želiš
         levelID = 1;
+        userID = 5;
         //sama adresa zahtjeva
-        jsonUrl = "https://airprojektunitygts.000webhostapp.com/Wave.php?level=";
+        jsonUrl = "https://airprojektunitygts.000webhostapp.com/AllLevelData.php?level=";
         //Sama korutina
-        processJsonData(GetWaveData(levelID));
+        processJsonData(GetWaveData(levelID,userID));
         /*
         foreach (EnemyListData item in allLevelData.enemies)
         {
@@ -32,12 +35,12 @@ public class LevelDataControler : MonoBehaviour
         }*/
     }
     //Sam zahtjev
-    private string GetWaveData(int level)
+    private string GetWaveData(int level, int userid)
     {
         using (WebClient client = new WebClient())
         {
             //link plus podatci zbog get metode
-            string link = jsonUrl + level.ToString();
+            string link = jsonUrl + level.ToString()+"&user="+ userid.ToString();
             string htmlCode = client.DownloadString(link);
             return htmlCode;
         }
