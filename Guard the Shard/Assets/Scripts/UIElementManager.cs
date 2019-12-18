@@ -49,6 +49,7 @@ public class UIElementManager : MonoBehaviour
         //Igra je u tijeku
         FindObjectOfType<AudioManagerController>().UnMuteAll();
         FindObjectOfType<AudioManagerController>().Play("MainTheme");
+        //FindObjectOfType<ScaleEnergy>().Scale(10);
         Time.timeScale = 1f;
         InGameCanvas.enabled = true;
         GameOverCanvas.enabled = false;
