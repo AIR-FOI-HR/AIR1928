@@ -7,20 +7,34 @@ using UnityEngine;
 
 public class UserControl
 {
-    public string Register(string username, string password)
+    public int Register(string username, string password)
     {
         string web = GetUserData(username, password, "signUp");
 
-        return web;
+        try
+        {
+            int ID = int.Parse(web);
+            return ID;
+        }
+        catch
+        {
+            return 0;
+        }
     }
 
-    public string Login(string username, string password)
+    public User Login(string username, string password)
     {
         string web = GetUserData(username, password, "signIn");
 
-        User user = JsonUtility.FromJson<User>(web);
-
-        return web;
+        try
+        {
+            User user = JsonUtility.FromJson<User>(web);
+            return user;
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     public string GetUserData(string username, string password, string type)
