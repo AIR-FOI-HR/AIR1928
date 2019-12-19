@@ -3952,7 +3952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643923323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: -3.54, z: 0}
+  m_LocalPosition: {x: 4.5, y: -3.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 96853138}
@@ -14595,11 +14595,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: PreviewLevelCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5138783179673280437, guid: f5467b6853a4b5a4785bea7164541327,
+    - target: {fileID: 5138783178587531148, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: m_Colors.m_FadeDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: m_FillMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138783178636813928, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138783178636813928, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000025749
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138783179055095049, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: InGameCanvas
+      value: 
+      objectReference: {fileID: 427681106}
+    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: PauseCanvas
+      value: 
+      objectReference: {fileID: 613566139}
+    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: GameOverCanvas
+      value: 
+      objectReference: {fileID: 1555224105}
     - target: {fileID: 5138783179673280434, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14705,40 +14755,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+    - target: {fileID: 5138783179673280437, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
-      propertyPath: InGameCanvas
-      value: 
-      objectReference: {fileID: 427681106}
-    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: PauseCanvas
-      value: 
-      objectReference: {fileID: 613566139}
-    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: GameOverCanvas
-      value: 
-      objectReference: {fileID: 1555224105}
-    - target: {fileID: 5138783178636813928, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 85
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138783178636813928, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000025749
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138783180342758529, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 181
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138783180342758529, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 35.5
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5138783180179797557, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
@@ -14750,35 +14770,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -8
       objectReference: {fileID: 0}
-    - target: {fileID: 5138783179055095049, guid: f5467b6853a4b5a4785bea7164541327,
+    - target: {fileID: 5138783180342758529, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_AnchoredPosition.y
+      value: 181
       objectReference: {fileID: 0}
-    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
+    - target: {fileID: 5138783180342758529, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_FillMethod
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138783178587531149, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138783178587531148, guid: f5467b6853a4b5a4785bea7164541327,
-        type: 3}
-      propertyPath: m_Colors.m_FadeDuration
-      value: 0.1
+      propertyPath: m_SizeDelta.y
+      value: 35.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5467b6853a4b5a4785bea7164541327, type: 3}
@@ -15169,11 +15169,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6226766640573616610, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
+    - target: {fileID: 6226766640573616608, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: ScoreUi
+      value: 
+      objectReference: {fileID: 2003800900}
     - target: {fileID: 6226766640573616609, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15279,11 +15279,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6226766640573616608, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
+    - target: {fileID: 6226766640573616610, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
-      propertyPath: ScoreUi
-      value: 
-      objectReference: {fileID: 2003800900}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6226766640573616615, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
       propertyPath: InGameCanvas
