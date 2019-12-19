@@ -41,5 +41,10 @@ public class MainManuScript : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
+
+    public void IdiNaSkilleve()
+    {
+        SceneManager.LoadScene(6);
+    }
     
 }
