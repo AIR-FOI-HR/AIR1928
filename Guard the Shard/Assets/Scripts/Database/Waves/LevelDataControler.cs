@@ -22,8 +22,8 @@ public class LevelDataControler : MonoBehaviour
         else levelID = PlayerPrefs.GetInt("level", 0);
         
         //isto ko i proslo samo za user id
-        if (PlayerPrefs.GetInt("id", 0) == 0) userID = 5;
-        else userID = PlayerPrefs.GetInt("id", 0);
+        if (PlayerPrefs.GetInt("userid", 0) == 0) userID = 5;
+        else userID = PlayerPrefs.GetInt("userid", 0);
         
         //sama adresa zahtjeva
         jsonUrl = "https://airprojektunitygts.000webhostapp.com/AllLevelData.php?level=";

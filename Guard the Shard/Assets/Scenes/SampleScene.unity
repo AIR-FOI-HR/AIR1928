@@ -5950,6 +5950,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6052375f4416eee4fbce7818a9382a52, type: 3}
+--- !u!114 &810649106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6406460602942729014, guid: 6052375f4416eee4fbce7818a9382a52,
+    type: 3}
+  m_PrefabInstance: {fileID: 810649105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6644ab90fa2841242b77db9f5fc84e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &814713186
 GameObject:
   m_ObjectHideFlags: 0
@@ -14765,6 +14777,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1260623310831829649, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1260623310831829648, guid: af39e249026b11c4a8a7862062c2bee7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14885,8 +14902,76 @@ PrefabInstance:
       propertyPath: LevelPreview
       value: 
       objectReference: {fileID: 412670003}
+    - target: {fileID: 1260623310831829655, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: skripta
+      value: 
+      objectReference: {fileID: 810649106}
+    - target: {fileID: 1260623310831829655, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: freezeButton
+      value: 
+      objectReference: {fileID: 1260623310413670341}
+    - target: {fileID: 1260623310831829655, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: fireballButton
+      value: 
+      objectReference: {fileID: 1260623310413670342}
+    - target: {fileID: 1260623310831829655, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: magicButton
+      value: 
+      objectReference: {fileID: 1260623310413670340}
+    - target: {fileID: 1260623310576082782, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a648e130108d86e4694f451032cf2574,
+        type: 3}
+    - target: {fileID: 1260623310399436800, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6bf265c2ef12cca4dbdedc64995d458e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af39e249026b11c4a8a7862062c2bee7, type: 3}
+--- !u!114 &1260623310413670340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1260623309959681682, guid: af39e249026b11c4a8a7862062c2bee7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1260623310413670339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1260623310413670341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1260623310399436801, guid: af39e249026b11c4a8a7862062c2bee7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1260623310413670339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1260623310413670342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1260623310576082783, guid: af39e249026b11c4a8a7862062c2bee7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1260623310413670339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1794478277681287032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15337,7 +15422,7 @@ PrefabInstance:
     - target: {fileID: 5138783179673280437, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5138783178587531148, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}

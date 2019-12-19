@@ -54,9 +54,11 @@ public class SkillHandlerScript : MonoBehaviour
 
     void Update()
     {
+        
         //ako je uhvaćen tap bez držanja
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
+            
             //raycasting kako bi dohvatit sve udarce u collidere
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, Vector2.zero);

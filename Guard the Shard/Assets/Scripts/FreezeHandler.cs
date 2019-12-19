@@ -15,6 +15,7 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
     //dedukcija energije iz objekta
     public bool DeductCost(int cost)
     {
+        
         float usableEnergy = GameObject.Find("EnergyContainer").GetComponent<Energy>().currentEnergy;
         if (usableEnergy >= cost)
         {
