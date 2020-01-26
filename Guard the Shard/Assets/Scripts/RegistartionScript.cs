@@ -16,8 +16,6 @@ public class RegistartionScript : MonoBehaviour
     //Prelazak na scenu prijave
     public void IdiNaPrijavu()
     {
-        AchivementControl ac = new AchivementControl();
-        ac.GetUserAchivements(1);
         SceneManager.LoadScene(2);
     }
 
