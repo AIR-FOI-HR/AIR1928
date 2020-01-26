@@ -32,7 +32,9 @@ public class StartGame : MonoBehaviour
         int levelId = level.LevelId();
         levelName = GameObject.Find("LevelName").transform;
         Text levelNameText = levelName.GetComponent<Text>();
-        
+
+        Scene scene = SceneManager.GetActiveScene();
+
 
         if (levelId != 0)
         {
@@ -43,6 +45,13 @@ public class StartGame : MonoBehaviour
             globalHS = GameObject.Find("GlobalHS").transform;
             Text globalHsValue = globalHS.GetComponent<Text>();
             globalHsValue.text = "GLOBAL HIGHSCORE: \n" + scoreControl.GetAllScores(levelId).Scores[0].Score.ToString();
+        }
+        else if (scene.name == "Tutorial")
+        {
+            levelNameText.text = "Tutorial";
+            userHsValue.text = "U nekoliko minuta upoznajte se s igrinim mehanikama";
+            Text globalHsValue = globalHS.GetComponent<Text>();
+            globalHsValue.text = "Pratite upute u desnom donjem kutu ekrana za brže rješavanje";
         }
         
 
