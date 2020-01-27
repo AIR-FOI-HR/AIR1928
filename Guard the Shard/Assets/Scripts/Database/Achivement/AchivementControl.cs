@@ -56,4 +56,31 @@ public class AchivementControl
             return htmlCode;
         }
     }
+
+    //connets user with achivement, returns true if successful and false if user already has that achivement
+    public bool SetUserAchivements(int userId, int achivementId)
+    {
+        string web = SetUserAchivementData("setUserAchivement", userId, achivementId);
+
+        if (web == "Success")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //gets user achivements data from web
+    private string SetUserAchivementData(string type, int userId, int achivementId)
+    {
+        using (WebClient client = new WebClient())
+        {
+            string link = $"https://airprojektunitygts.000webhostapp.com/achivement.php?type={type}&userId={userId}&achivementId={achivementId}";
+            string htmlCode = client.DownloadString(link);
+            return htmlCode;
+        }
+    }
+    }
 }
