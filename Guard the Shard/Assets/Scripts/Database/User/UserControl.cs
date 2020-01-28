@@ -67,7 +67,7 @@ public class UserControl
             return;
         }
     }
-
+    //Change the username of user
     public async Task ChangeUsername(int userId, string username)
     {
         using (WebClient client = new WebClient())
@@ -75,6 +75,21 @@ public class UserControl
             string link = $"https://airprojektunitygts.000webhostapp.com/user.php?type=changeUsername&userId={userId}&username={username}";
             string htmlCode = client.DownloadString(link);
             return;
+        }
+    }
+    //Change the password of user, all validation for old password is done here, returns true if successful
+    //returns false if old password is incorrect
+    public bool ChangePassword(int userId, string oldPassword, string newPassword)
+    {
+        using (WebClient client = new WebClient())
+        {
+            string link = $"https://airprojektunitygts.000webhostapp.com/user.php?type=changePassword&userId={userId}&password={oldPassword}&newPassword={newPassword}";
+            string htmlCode = client.DownloadString(link);
+            if(htmlCode == "valid")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
