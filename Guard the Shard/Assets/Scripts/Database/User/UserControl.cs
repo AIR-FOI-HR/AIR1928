@@ -67,4 +67,14 @@ public class UserControl
             return;
         }
     }
+
+    public async Task ChangeUsername(int userId, string username)
+    {
+        using (WebClient client = new WebClient())
+        {
+            string link = $"https://airprojektunitygts.000webhostapp.com/user.php?type=changeUsername&userId={userId}&username={username}";
+            string htmlCode = client.DownloadString(link);
+            return;
+        }
+    }
 }
