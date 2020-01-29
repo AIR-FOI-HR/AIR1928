@@ -20,7 +20,7 @@ public class SkillsScript : MonoBehaviour
     {
         SkillControl skillControl = new SkillControl();
 
-        foreach (var item in skillControl.GetUserSkills(20))
+        foreach (var item in skillControl.GetUserSkills(PlayerPrefs.GetInt("userid")))
         {
             switch (item)
             {
@@ -86,8 +86,8 @@ public class SkillsScript : MonoBehaviour
         }
         else
         {
-            skillControl.SetSkills(skills[1], skills[2], skills[3], 20);
-            //SceneManager.LoadScene(3);
+            skillControl.SetSkills(skills[0], skills[1], skills[2], PlayerPrefs.GetInt("userid"));
+            SceneManager.LoadScene(3);
         }
     }
 
