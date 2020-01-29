@@ -75,7 +75,7 @@ public class UIElementManager : MonoBehaviour
         GameOverCanvas.enabled = true;
         LevelPreview.enabled = false;
         PauseCanvas.enabled = false;
-
+        FindObjectOfType<AudioManagerController>().MuteAll();
         Time.timeScale = 0f;
         scoreControl.writeScore(levelId.LevelId(), 1, int.Parse(score));
        

@@ -72,8 +72,8 @@ public class StartGame : MonoBehaviour
     {
 
         FindObjectOfType<AudioManagerController>().UnMuteAll();
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-        
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+
     }
 
    

@@ -46,7 +46,7 @@ public class GameOverScreen : MonoBehaviour
     {
         //POnovna igra -> ponovno učitavanje scene 
         string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        SceneManager.LoadScene(currentSceneName, LoadSceneMode.Single);
         
 
 
@@ -55,8 +55,7 @@ public class GameOverScreen : MonoBehaviour
     public void GoToMenu()
     {
         //Povratak na glavni izbornik
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-        FindObjectOfType<AudioManagerController>().UnMuteAll();
-        //Pokretat ce se main menu theme muzika
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);        
+
     }
 }

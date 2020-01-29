@@ -60,10 +60,12 @@ public class SettingsScript : MonoBehaviour
         if (brojacS % 2 == 0)
         {
             soundButton.image.overrideSprite = blockA;
+            FindObjectOfType<AudioManagerController>().EnableVibration();            
         }
         else
         {
             soundButton.image.overrideSprite = blockB;
+            FindObjectOfType<AudioManagerController>().DisableVibration();           
         }
     }
 
