@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyStorySpawner : MonoBehaviour
 {
@@ -148,9 +149,8 @@ public class EnemyStorySpawner : MonoBehaviour
             waveNumber++;
             if (waveNumber > ListofEnemies.Count)
             {
-                // FABIO pozovi level victory screen tu
-                // ===========> Pozovi što već treba za kraj igre <===============
-                Debug.Log("Level je gotov :)");
+                string score = FindObjectOfType<InGameEventMaanger>().Score.GetComponent<Text>().text;
+                FindObjectOfType<UIElementManager>().GameOver(score);                
             }
         }
     }

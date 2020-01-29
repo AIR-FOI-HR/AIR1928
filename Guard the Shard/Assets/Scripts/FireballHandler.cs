@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FireballHandler : MonoBehaviour, ISkillInterface
 {
@@ -12,6 +13,10 @@ public class FireballHandler : MonoBehaviour, ISkillInterface
     float SKillDuration = 0;
     //sam skill koji se u ovu varijablu učitava
     GameObject InstanceOfSkill = null;
+    //UI element koji poziva skill
+    public Button fireballButton;
+    //skripta koja handla poziv skilla
+    public SkillHandlerScript skripta;
     //dedukcija energije iz objekta
     public bool DeductCost(int cost)
     {
@@ -27,7 +32,11 @@ public class FireballHandler : MonoBehaviour, ISkillInterface
     //učitavanje resursa u varijablu
     public void PrepareForUse()
     {
+        skripta = FindObjectOfType<SkillHandlerScript>();
         InstanceOfSkill = Resources.Load("FireballSkill") as GameObject;
+        fireballButton = GameObject.Find("FirstSkillButton").GetComponent<Button>();
+        fireballButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("ico_1");
+        fireballButton.onClick.AddListener(delegate { UseSkill(1); });
     }
     //prijenos parametara
     public void SendParameters(float range, int damage, float slow, float duration)
@@ -49,5 +58,11 @@ public class FireballHandler : MonoBehaviour, ISkillInterface
     void Awake()
     {
         PrepareForUse();
+        
+    }
+    public void UseSkill(int skillId)
+    {
+        skripta.Enabled = true;
+        skripta.skillToUSe = skillId;
     }
 }

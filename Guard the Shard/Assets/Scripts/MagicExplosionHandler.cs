@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
 {
@@ -10,8 +11,13 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
     int SkillDamage = 0;
     float SkillSlow = 0;
     float SKillDuration = 0;
+    //UI element koji poziva skill
+    public Button magicButton;
+    //skripta koja handla poziv skilla
+    public SkillHandlerScript skripta;
     //sam skill koji se u ovu varijablu učitava
     GameObject InstanceOfSkill = null;
+
     //dedukcija energije iz objekta
     public bool DeductCost(int cost)
     {
@@ -27,7 +33,11 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
     //učitavanje resursa u varijablu
     public void PrepareForUse()
     {
+        skripta = FindObjectOfType<SkillHandlerScript>();
         InstanceOfSkill = Resources.Load("MagicExplosionSkill") as GameObject;
+        magicButton = GameObject.Find("SecondSkillButton").GetComponent<Button>();
+        magicButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("ico_7");
+        magicButton.onClick.AddListener(delegate { UseSkill(2); });
     }
     //prijenos parametara
     public void SendParameters(float range, int damage, float slow, float duration)
@@ -50,4 +60,10 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
     {
         PrepareForUse();
     }
+    public void UseSkill(int skillId)
+    {
+        skripta.Enabled = true;
+        skripta.skillToUSe = skillId;
+    }
+
 }
