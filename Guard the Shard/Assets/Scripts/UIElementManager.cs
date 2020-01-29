@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIElementManager : MonoBehaviour
 {
+
+
     //Elementi sučelja čije pojavljivanje kontroliramo
     public Canvas InGameCanvas;
     public Canvas PauseCanvas;
@@ -11,6 +13,13 @@ public class UIElementManager : MonoBehaviour
     public Canvas LevelPreview;
     public ScoreControl scoreControl = new ScoreControl();
     public GetLevelId levelId = new GetLevelId();
+    public Canvas DialogBoxCanvas;
+
+    //varijable za dialog
+    public bool pauseMode = false;
+    public GameObject dialogBox;
+    public Text dialogText;
+    public string dialog;
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +28,7 @@ public class UIElementManager : MonoBehaviour
         InGameCanvas = GameObject.Find("InGameCanvas").GetComponent<Canvas>();
         GameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
         PauseCanvas = GameObject.Find("PauseMenuCanvas").GetComponent<Canvas>();
+        DialogBoxCanvas = GameObject.Find("DialogBoxCanvas").GetComponent<Canvas>();
     }
     void Start()
     {
@@ -38,6 +48,7 @@ public class UIElementManager : MonoBehaviour
         GameOverCanvas.enabled = false;
         LevelPreview.enabled = true;
         PauseCanvas.enabled = false;
+        DialogBoxCanvas.enabled = false;
 
         Time.timeScale = 0f;
         //FindObjectOfType<AudioManagerController>().MuteAll();
@@ -46,15 +57,38 @@ public class UIElementManager : MonoBehaviour
 
     public void PlayGame()
     {
-        //Igra je u tijeku
-        FindObjectOfType<AudioManagerController>().UnMuteAll();
-        FindObjectOfType<AudioManagerController>().Play("MainTheme");
-        //FindObjectOfType<ScaleEnergy>().Scale(10);
-        Time.timeScale = 1f;
-        InGameCanvas.enabled = true;
-        GameOverCanvas.enabled = false;
+        DialogBoxCanvas.enabled = true;
         LevelPreview.enabled = false;
-        PauseCanvas.enabled = false;
+        
+        if(GameObject.Find("WaveSpawner") == null)
+        {
+            dialogText.text = "Try to survive as much as posible. " +
+                              "Good luck, you are on endless mode.";
+        }
+        else
+        {
+            dialogText.text = dialog;
+        }
+
+
+
+        // Prilikom pritiska na ekran, dialog nestaje
+        // i igra pocinje
+        if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0 || pauseMode)
+        {
+            pauseMode = true;
+            DialogBoxCanvas.enabled = false; 
+            
+            //Igra je u tijeku
+            FindObjectOfType<AudioManagerController>().UnMuteAll();
+            FindObjectOfType<AudioManagerController>().Play("MainTheme");
+            //FindObjectOfType<ScaleEnergy>().Scale(10);
+            Time.timeScale = 1f;
+            GameOverCanvas.enabled = false;
+            InGameCanvas.enabled = true;
+            PauseCanvas.enabled = false;
+        
+        }
     }
 
     public void Pause()
