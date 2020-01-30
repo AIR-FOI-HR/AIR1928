@@ -9,6 +9,7 @@ public class UIElementManager : MonoBehaviour
     public Canvas PauseCanvas;
     public Canvas GameOverCanvas;
     public Canvas LevelPreview;
+    public Canvas BonusCanvas;
     public ScoreControl scoreControl = new ScoreControl();
     public GetLevelId levelId = new GetLevelId();
     // Start is called before the first frame update
@@ -19,6 +20,8 @@ public class UIElementManager : MonoBehaviour
         InGameCanvas = GameObject.Find("InGameCanvas").GetComponent<Canvas>();
         GameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<Canvas>();
         PauseCanvas = GameObject.Find("PauseMenuCanvas").GetComponent<Canvas>();
+        BonusCanvas = GameObject.Find("BonusCanvas").GetComponent<Canvas>();
+        
     }
     void Start()
     {
@@ -38,6 +41,7 @@ public class UIElementManager : MonoBehaviour
         GameOverCanvas.enabled = false;
         LevelPreview.enabled = true;
         PauseCanvas.enabled = false;
+        BonusCanvas.enabled = false;
 
         Time.timeScale = 0f;
         //FindObjectOfType<AudioManagerController>().MuteAll();
@@ -47,6 +51,7 @@ public class UIElementManager : MonoBehaviour
     public void PlayGame()
     {
         //Igra je u tijeku
+        
         FindObjectOfType<AudioManagerController>().UnMuteAll();
         FindObjectOfType<AudioManagerController>().Play("MainTheme");
         //FindObjectOfType<ScaleEnergy>().Scale(10);
@@ -55,6 +60,7 @@ public class UIElementManager : MonoBehaviour
         GameOverCanvas.enabled = false;
         LevelPreview.enabled = false;
         PauseCanvas.enabled = false;
+        BonusCanvas.enabled = false;
     }
 
     public void Pause()
@@ -66,6 +72,7 @@ public class UIElementManager : MonoBehaviour
         GameOverCanvas.enabled = false;
         LevelPreview.enabled = false;
         PauseCanvas.enabled = true;
+        BonusCanvas.enabled = false;
     }
 
     public void GameOver(string score)
@@ -82,6 +89,18 @@ public class UIElementManager : MonoBehaviour
         FindObjectOfType<GameOverScreen>().userResult.text = "Your score: " + score;
         FindObjectOfType<ScoreVisualization>().Visualize();
         //Debug.Log(FindObjectOfType<GameOverScreen>().userResult.text);
+
+    }
+
+    public void TurretUpgrade()
+    {
+        Time.timeScale = 0f;
+        BonusCanvas.enabled = true;
+        InGameCanvas.enabled = true;
+        GameOverCanvas.enabled = false;
+        LevelPreview.enabled = false;
+        PauseCanvas.enabled = false;
+
 
     }
 

@@ -81,8 +81,15 @@ public class EnemyStorySpawner : MonoBehaviour
         //pozicija u listi neprijatelja za dani val se resetira
         currentListPos = 0;
         //stvareanje waveNumber neprijatelja
+        //je li iskoristen bonus
+        bool bonus = false;
         for (int i = 0; i < (ListofEnemies[waveNumber-1].Count); i++)
-        {
+        {            
+            if (waveNumber % 3 == 0 && !bonus)
+            {               
+                FindObjectOfType<UIElementManager>().TurretUpgrade();
+                bonus = true;
+            }
             SpawnEnemy();
             yield return new WaitForSeconds(0.5f);
         }

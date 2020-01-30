@@ -70,8 +70,15 @@ public class EnemySpawner : MonoBehaviour
         //povećanje broj wavea za 1
         waveNumber++;
         //stvareanje waveNumber neprijatelja
+        //je li iskoristen bonus
+        bool bonus = false;
         for (int i = 0; i < waveNumber; i++)
-        {
+        {            
+            if(waveNumber % 3 == 0 && !bonus)
+            {
+                FindObjectOfType<UIElementManager>().TurretUpgrade();
+                bonus = true;
+            }
             SpawnEnemy();
             yield return new WaitForSeconds(0.5f);
         }
