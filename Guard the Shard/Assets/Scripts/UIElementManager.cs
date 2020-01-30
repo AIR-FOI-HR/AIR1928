@@ -12,6 +12,7 @@ public class UIElementManager : MonoBehaviour
     public Canvas BonusCanvas;
     public ScoreControl scoreControl = new ScoreControl();
     public GetLevelId levelId = new GetLevelId();
+    public int UserID;
     // Start is called before the first frame update
     void Awake()
     {
@@ -84,7 +85,9 @@ public class UIElementManager : MonoBehaviour
         PauseCanvas.enabled = false;
 
         Time.timeScale = 0f;
-        scoreControl.writeScore(levelId.LevelId(), 1, int.Parse(score));
+        UserID = PlayerPrefs.GetInt("userid", 0);
+        scoreControl.writeScore(levelId.LevelId(), UserID, int.Parse(score));
+        Debug.Log(levelId.LevelId());
        
         FindObjectOfType<GameOverScreen>().userResult.text = "Your score: " + score;
         FindObjectOfType<ScoreVisualization>().Visualize();

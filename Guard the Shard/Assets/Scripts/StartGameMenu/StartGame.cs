@@ -14,6 +14,7 @@ public class StartGame : MonoBehaviour
     public Transform levelName;
     private ScoreControl scoreControl = new ScoreControl();
     private GetLevelId level  = new GetLevelId();
+    public int userID;
 
     void Awake()
     {
@@ -37,8 +38,18 @@ public class StartGame : MonoBehaviour
         if (levelId != 0)
         {
             levelNameText.text = "Level: " + (levelId - 4).ToString();
-            userHsValue.text = "YOUR HIGHSCORE: \n" + scoreControl.GetPlayerScore(levelId, 1).Score.ToString();
-            //userHsValue.text = "Your highscore: \n 5000";
+            userID = PlayerPrefs.GetInt("userid", 0);
+            try
+            {
+                userHsValue.text = "YOUR HIGHSCORE: \n" + scoreControl.GetPlayerScore(levelId, userID).Score.ToString();
+                //userHsValue.text = "Your highscore: \n 5000";
+            }
+            catch (System.Exception)
+            {
+                userHsValue.text = "First game";
+                //Debug.Log(userID);
+            }
+            
 
             globalHS = GameObject.Find("GlobalHS").transform;
             Text globalHsValue = globalHS.GetComponent<Text>();
@@ -72,7 +83,7 @@ public class StartGame : MonoBehaviour
     {
 
         FindObjectOfType<AudioManagerController>().UnMuteAll();
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         
     }
 

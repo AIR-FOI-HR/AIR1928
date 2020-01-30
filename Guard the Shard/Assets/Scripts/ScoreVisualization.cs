@@ -10,8 +10,8 @@ public class ScoreVisualization : MonoBehaviour
     private Transform entryContainer;
     private ScoreControl scoreControl = new ScoreControl();
     private UserControl userControl = new UserControl();
-
-    
+    public int UserID;
+    private GetLevelId levelId = new GetLevelId();
 
     void Awake()
     {
@@ -54,9 +54,10 @@ public class ScoreVisualization : MonoBehaviour
             int rank = i + 1;
 
             //inace ce se uzimati iz baze
-
-            int score = scoreControl.GetAllScores(1).Scores[i].Score;
-            int userId = scoreControl.GetAllScores(1).Scores[i].UserID;
+            //UserID = PlayerPrefs.GetInt("userid", 0);            
+            Debug.Log(levelId.LevelId());
+            int score = scoreControl.GetAllScores(levelId.LevelId()).Scores[i].Score;
+            int userId = scoreControl.GetAllScores(5).Scores[i].UserID;
             string username = scoreControl.GetUsername(userId).Username;
 
             entryTransform.Find("MockPosition").GetComponent<Text>().text = rank.ToString();
