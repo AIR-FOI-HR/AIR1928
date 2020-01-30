@@ -47,4 +47,8 @@ public class MainManuScript : MonoBehaviour
         SceneManager.LoadScene(6);
     }
     
+    public void IdiNaProfil()
+    {
+        SceneManager.LoadScene(7);
+    }
 }
