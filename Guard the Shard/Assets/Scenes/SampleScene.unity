@@ -1369,6 +1369,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &210534730 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1939649899261741711, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 586287929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &211912865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1461,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &215397128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1939649900246123579, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 586287929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &219896886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,6 +3883,145 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &586287929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1939649899790842067, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogBoxCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842068, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939649899790842064, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: InGameCanvas
+      value: 
+      objectReference: {fileID: 427681106}
+    - target: {fileID: 1939649899790842064, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: PauseCanvas
+      value: 
+      objectReference: {fileID: 613566139}
+    - target: {fileID: 1939649899790842064, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: GameOverCanvas
+      value: 
+      objectReference: {fileID: 1555224105}
+    - target: {fileID: 1939649899790842064, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+        type: 3}
+      propertyPath: LevelPreview
+      value: 
+      objectReference: {fileID: 412670003}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b689abaa05f4f244ac2bfc591bfbbbb, type: 3}
 --- !u!1 &598148862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3989,6 +4146,12 @@ Transform:
   m_Father: {fileID: 1654925445}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &602352406 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1939649899790842071, guid: 3b689abaa05f4f244ac2bfc591bfbbbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 586287929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!223 &613566139 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 4200870332950675938, guid: 637d66f805d27274e846430614d75ad9,
@@ -4379,7 +4542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &646286038
 GameObject:
@@ -5065,7 +5228,7 @@ PrefabInstance:
     - target: {fileID: 90333672659283502, guid: de734497de99b2b47be982bcc831d36a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 90333672659283502, guid: de734497de99b2b47be982bcc831d36a,
         type: 3}
@@ -5931,7 +6094,7 @@ PrefabInstance:
     - target: {fileID: 6406460602942729013, guid: 6052375f4416eee4fbce7818a9382a52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6406460602942729013, guid: 6052375f4416eee4fbce7818a9382a52,
         type: 3}
@@ -7826,12 +7989,12 @@ PrefabInstance:
     - target: {fileID: 1023350351724415991, guid: 7a4d134720dbb614b93a958052fba4fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1023350351724415991, guid: 7a4d134720dbb614b93a958052fba4fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1023350351724415991, guid: 7a4d134720dbb614b93a958052fba4fc,
         type: 3}
@@ -14657,7 +14820,7 @@ PrefabInstance:
     - target: {fileID: 373422933627144898, guid: 495f44a4cddbbcb43bdd84639217c015,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 373422933627144898, guid: 495f44a4cddbbcb43bdd84639217c015,
         type: 3}
@@ -14731,17 +14894,17 @@ PrefabInstance:
     - target: {fileID: 1023350351724415991, guid: 7a4d134720dbb614b93a958052fba4fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1023350351724415991, guid: 7a4d134720dbb614b93a958052fba4fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1023350351724415991, guid: 7a4d134720dbb614b93a958052fba4fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1023350351724415991, guid: 7a4d134720dbb614b93a958052fba4fc,
         type: 3}
@@ -14820,7 +14983,7 @@ PrefabInstance:
     - target: {fileID: 1260623310831829648, guid: af39e249026b11c4a8a7862062c2bee7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1260623310831829648, guid: af39e249026b11c4a8a7862062c2bee7,
         type: 3}
@@ -14902,6 +15065,27 @@ PrefabInstance:
       propertyPath: LevelPreview
       value: 
       objectReference: {fileID: 412670003}
+    - target: {fileID: 1260623310831829654, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: DialogBoxCanvas
+      value: 
+      objectReference: {fileID: 602352406}
+    - target: {fileID: 1260623310831829654, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 215397128}
+    - target: {fileID: 1260623310831829654, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 210534730}
+    - target: {fileID: 1260623310831829654, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: dialog
+      value: The time has come. They are going to attack us with all their forces.
+        But we are not giving up...
+      objectReference: {fileID: 0}
     - target: {fileID: 1260623310831829655, guid: af39e249026b11c4a8a7862062c2bee7,
         type: 3}
       propertyPath: skripta
@@ -15022,17 +15206,17 @@ PrefabInstance:
     - target: {fileID: 1794478277829924961, guid: d0805e19c5909204e890d52399784a12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1794478277829924961, guid: d0805e19c5909204e890d52399784a12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1794478277829924961, guid: d0805e19c5909204e890d52399784a12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1794478277829924961, guid: d0805e19c5909204e890d52399784a12,
         type: 3}
@@ -15106,7 +15290,7 @@ PrefabInstance:
     - target: {fileID: 2078506153333964718, guid: 54b99c0329667c04cbeacee4534140bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2078506153333964718, guid: 54b99c0329667c04cbeacee4534140bc,
         type: 3}
@@ -15323,7 +15507,7 @@ PrefabInstance:
     - target: {fileID: 4200870332950675941, guid: 637d66f805d27274e846430614d75ad9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4200870332950675941, guid: 637d66f805d27274e846430614d75ad9,
         type: 3}
@@ -15405,6 +15589,27 @@ PrefabInstance:
       propertyPath: LevelPreview
       value: 
       objectReference: {fileID: 412670003}
+    - target: {fileID: 4200870332950675943, guid: 637d66f805d27274e846430614d75ad9,
+        type: 3}
+      propertyPath: DialogBoxCanvas
+      value: 
+      objectReference: {fileID: 602352406}
+    - target: {fileID: 4200870332950675943, guid: 637d66f805d27274e846430614d75ad9,
+        type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 215397128}
+    - target: {fileID: 4200870332950675943, guid: 637d66f805d27274e846430614d75ad9,
+        type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 210534730}
+    - target: {fileID: 4200870332950675943, guid: 637d66f805d27274e846430614d75ad9,
+        type: 3}
+      propertyPath: dialog
+      value: The time has come. They are going to attack us with all their forces.
+        But we are not giving up...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637d66f805d27274e846430614d75ad9, type: 3}
 --- !u!1001 &5138783179547953030
@@ -15479,6 +15684,27 @@ PrefabInstance:
       propertyPath: GameOverCanvas
       value: 
       objectReference: {fileID: 1555224105}
+    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: DialogBoxCanvas
+      value: 
+      objectReference: {fileID: 602352406}
+    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 215397128}
+    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 210534730}
+    - target: {fileID: 5138783179673280432, guid: f5467b6853a4b5a4785bea7164541327,
+        type: 3}
+      propertyPath: dialog
+      value: The time has come. They are going to attack us with all their forces.
+        But we are not giving up...
+      objectReference: {fileID: 0}
     - target: {fileID: 5138783179673280434, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15517,7 +15743,7 @@ PrefabInstance:
     - target: {fileID: 5138783179673280434, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 5138783179673280434, guid: f5467b6853a4b5a4785bea7164541327,
         type: 3}
@@ -15730,7 +15956,7 @@ PrefabInstance:
     - target: {fileID: 5167622992602704723, guid: dc916f9eb52e4474e8f97c3da152442e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5167622992602704723, guid: dc916f9eb52e4474e8f97c3da152442e,
         type: 3}
@@ -15799,17 +16025,17 @@ PrefabInstance:
     - target: {fileID: 5594314480300794185, guid: 68585882b2c58ce40817687faede8963,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5594314480300794185, guid: 68585882b2c58ce40817687faede8963,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5594314480300794185, guid: 68585882b2c58ce40817687faede8963,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5594314480300794185, guid: 68585882b2c58ce40817687faede8963,
         type: 3}
@@ -15883,7 +16109,7 @@ PrefabInstance:
     - target: {fileID: 5686034928734932357, guid: 84bf4f49606c87b46a152a8926ba1d1c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5686034928734932357, guid: 84bf4f49606c87b46a152a8926ba1d1c,
         type: 3}
@@ -15998,11 +16224,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6226766640573616608, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
-        type: 3}
-      propertyPath: ScoreUi
-      value: 
-      objectReference: {fileID: 2003800900}
     - target: {fileID: 6226766640573616609, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16041,7 +16262,7 @@ PrefabInstance:
     - target: {fileID: 6226766640573616609, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6226766640573616609, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
@@ -16108,6 +16329,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6226766640573616608, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
+        type: 3}
+      propertyPath: ScoreUi
+      value: 
+      objectReference: {fileID: 2003800900}
     - target: {fileID: 6226766640573616615, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
         type: 3}
       propertyPath: InGameCanvas
@@ -16123,5 +16349,26 @@ PrefabInstance:
       propertyPath: LevelPreview
       value: 
       objectReference: {fileID: 412670003}
+    - target: {fileID: 6226766640573616615, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
+        type: 3}
+      propertyPath: DialogBoxCanvas
+      value: 
+      objectReference: {fileID: 602352406}
+    - target: {fileID: 6226766640573616615, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
+        type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 215397128}
+    - target: {fileID: 6226766640573616615, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
+        type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 210534730}
+    - target: {fileID: 6226766640573616615, guid: bbf968e3eff7ba0419c559ad0d00bbfe,
+        type: 3}
+      propertyPath: dialog
+      value: The time has come. They are going to attack us with all their forces.
+        But we are not giving up...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf968e3eff7ba0419c559ad0d00bbfe, type: 3}
