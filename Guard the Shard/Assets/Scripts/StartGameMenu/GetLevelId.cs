@@ -12,18 +12,32 @@ public class GetLevelId
         switch (scene.name)
         {
             case "SampleScene":
+                sceneId = 1;
+                break;
+            case "Level1":
+                sceneId = 1;
+                break;
+            case "Level2":
+                sceneId = 2;
+                break;
+            case "Level3":
+                sceneId = 3;
+                break;
+            case "Level4":
+                sceneId = 4;
+                break;
+            case "Level1Story":
                 sceneId = 5;
                 break;
-            case "Map_2":
+            case "Level2Story":
                 sceneId = 6;
                 break;
-            case "Map_3":
+            case "Level3Story":
                 sceneId = 7;
                 break;
-            case "Map_4":
+            case "Level4Story":
                 sceneId = 8;
                 break;
-
             default:
                 sceneId = 0;
                 break;
