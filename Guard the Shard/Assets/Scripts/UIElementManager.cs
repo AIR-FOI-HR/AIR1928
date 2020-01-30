@@ -32,7 +32,7 @@ public class UIElementManager : MonoBehaviour
     }
     void Start()
     {
-         
+        
     }
 
     // Update is called once per frame
@@ -65,11 +65,14 @@ public class UIElementManager : MonoBehaviour
             dialogText.text = "Try to survive as much as posible. " +
                               "Good luck, you are on endless mode.";
         }
+        else if (GameObject.Find("TutorijalEventManager") != null)
+        {
+            dialogText.text = dialog;
+        }
         else
         {
             dialogText.text = dialog;
         }
-
 
 
         // Prilikom pritiska na ekran, dialog nestaje

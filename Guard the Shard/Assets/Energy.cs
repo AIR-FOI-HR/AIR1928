@@ -7,7 +7,7 @@ public class Energy : MonoBehaviour
     public ScaleEnergy EnergyBarScript = null;
     public GameObject crystal;
     public float currentEnergy = 0;
-    private float countdown = 5f;
+    public float countdown = 5f;
     private void Start()
     {
         EnergyBarScript = GameObject.Find("EnergyBar").GetComponent<ScaleEnergy>();
