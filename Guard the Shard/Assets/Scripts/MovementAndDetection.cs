@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class MovementAndDetection : MonoBehaviour
 {
+    GameObject turret = null;
     //skripta iz turreta
     private MovementOfTurret script;
     // Start is called before the first frame update
     void Start()
     {
-        script = GameObject.FindGameObjectWithTag("Turret").GetComponent<MovementOfTurret>();
+        turret = GameObject.FindGameObjectWithTag("Turret");
+        script = turret.GetComponent<MovementOfTurret>();
     }
     //provjerava pronalazi li se među elementima raycasta element s traženim tag-om
     private bool RaycastElemnt(string tag, RaycastHit2D[] hits)
@@ -41,6 +43,7 @@ public class MovementAndDetection : MonoBehaviour
                 if (RaycastElemnt("Turret",hits))
                 {
                     //selektiraj ga
+                    turret.transform.GetChild(0).transform.gameObject.SetActive(true);
                     script.selected = true;
                     //Debug.Log(script.selected);
                 }
@@ -52,12 +55,14 @@ public class MovementAndDetection : MonoBehaviour
                 if(RaycastElemnt("Turret", hits))
                 {
                     //deselektiran
+                    turret.transform.GetChild(0).transform.gameObject.SetActive(false);
                     script.selected = false;
                     //Debug.Log(script.selected);
                 }
                 else if(RaycastElemnt("Usable", hits))
                 {
                     //teleportiraj i deselektiraj
+                    turret.transform.GetChild(0).transform.gameObject.SetActive(false);
                     script.Teleport();
                     script.selected = false;
                 }

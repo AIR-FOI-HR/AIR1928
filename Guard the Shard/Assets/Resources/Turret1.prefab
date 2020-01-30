@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 2712915803585217296, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
         type: 3}
       propertyPath: m_Name
-      value: Turret
+      value: Turret1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712915803585217300, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+        type: 3}
+      propertyPath: changeButton
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2712915803585217297, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
         type: 3}
@@ -67,10 +72,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2712915803585217300, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+    - target: {fileID: 7254634502468924247, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
         type: 3}
-      propertyPath: changeButton
-      value: 
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254634502468924247, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254634502468924247, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254634502468924247, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738747228486251626, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583413398056013415, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -734736707
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583413398056013415, guid: ba84dffd71f1ea444bb7bb2975d7ae1f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba84dffd71f1ea444bb7bb2975d7ae1f, type: 3}
