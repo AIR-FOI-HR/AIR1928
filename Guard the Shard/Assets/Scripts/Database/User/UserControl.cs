@@ -74,7 +74,11 @@ public class UserControl
         {
             string link = $"https://airprojektunitygts.000webhostapp.com/user.php?type=changeUsername&userId={userId}&username={username}";
             string htmlCode = client.DownloadString(link);
-            return true;
+            if (htmlCode == "valid")
+            {
+                return true;
+            }
+            return false;
         }
     }
     //Change the password of user, all validation for old password is done here, returns true if successful
