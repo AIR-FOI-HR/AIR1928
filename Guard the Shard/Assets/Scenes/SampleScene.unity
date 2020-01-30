@@ -14926,6 +14926,11 @@ PrefabInstance:
       propertyPath: spawnPoint2
       value: 
       objectReference: {fileID: 2108664095}
+    - target: {fileID: 1023350351724415984, guid: 7a4d134720dbb614b93a958052fba4fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a4d134720dbb614b93a958052fba4fc, type: 3}
 --- !u!1001 &1260623310413670339
@@ -16125,6 +16130,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d7ac3d995ad0b9e4cac93bf9c83ec01f, type: 3}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: BattleSounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 88c5bcc3221170846923540b225cf2da, type: 3}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: BatSounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686034928734932356, guid: 84bf4f49606c87b46a152a8926ba1d1c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84bf4f49606c87b46a152a8926ba1d1c, type: 3}

@@ -95,6 +95,8 @@ public class EnemyStorySpawner : MonoBehaviour
         {
             if (item == ListofEnemies[waveNumber - 1][currentListPos])
             {
+                FindObjectOfType<AudioManagerController>().Play("BattleSounds");
+                FindObjectOfType<AudioManagerController>().Play("BatSounds");
                 //gdje je spawn point 1 ili 2
                 switch (Random.Range(0, 2))
                 {

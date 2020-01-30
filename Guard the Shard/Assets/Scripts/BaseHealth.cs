@@ -24,6 +24,15 @@ public class BaseHealth : MonoBehaviour
          
         //oduzima se jedan život
         LivesLeft--;
+        //TODO provjera jeli ugasena vibracija u postavkama
+        //Vibration ne radi u unity remote, samo u build appu        
+        //FindObjectOfType<AudioManagerController>().DisableVibration();
+        bool allowed = FindObjectOfType<AudioManagerController>().AllowVibration;
+        if (allowed)
+        {
+            Handheld.Vibrate();
+        }
+        
         FindObjectOfType<ScaleHealth>().Scale(LivesLeft);
         //ako smo ostali bez života
         if (LivesLeft <= 0)

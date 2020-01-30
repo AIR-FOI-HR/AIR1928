@@ -8,6 +8,7 @@ public class AudioManagerController : MonoBehaviour
 {
     //lista zvukova koje pokrećemo
     public Sound[] sounds;
+    public bool AllowVibration = true;
     //Awake se poziva kako bi nam zvukovi bili spremni prije prvog framea
     void Awake()
     {
@@ -87,6 +88,17 @@ public class AudioManagerController : MonoBehaviour
             Unmute(s.name);
         }
     }
+
+    public void DisableVibration()
+    {
+        AllowVibration = false;
+    }
+
+    public void EnableVibration()
+    {
+        AllowVibration = true;
+    }
+    
 
 }
 
