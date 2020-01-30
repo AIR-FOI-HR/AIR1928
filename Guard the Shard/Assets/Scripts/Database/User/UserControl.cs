@@ -68,13 +68,13 @@ public class UserControl
         }
     }
     //Change the username of user
-    public async Task ChangeUsername(int userId, string username)
+    public async Task<bool> ChangeUsername(int userId, string username)
     {
         using (WebClient client = new WebClient())
         {
             string link = $"https://airprojektunitygts.000webhostapp.com/user.php?type=changeUsername&userId={userId}&username={username}";
             string htmlCode = client.DownloadString(link);
-            return;
+            return true;
         }
     }
     //Change the password of user, all validation for old password is done here, returns true if successful
