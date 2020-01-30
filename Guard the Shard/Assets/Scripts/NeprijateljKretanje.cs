@@ -96,10 +96,12 @@ public class NeprijateljKretanje : MonoBehaviour
     //oduzimanje 1 od broja neprijatelja u tom wave-u
     void SubtractFromEneNumber()
     {
-        EnemyStorySpawner spawner= GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();
-        if(spawner != null)
-        {
-            spawner.DecreaseEnemyCount();
+        if (GameObject.Find("WaveSpawnerStoryMode") != null) {
+            EnemyStorySpawner spawner = GameObject.Find("WaveSpawnerStoryMode").GetComponent<EnemyStorySpawner>();
+            if (spawner != null)
+            {
+                spawner.DecreaseEnemyCount();
+            }
         }
     }
     //usporavanje neprijatelja
