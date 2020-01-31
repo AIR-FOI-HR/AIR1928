@@ -34,4 +34,9 @@ public class ProfileScript : MonoBehaviour
     {
         SceneManager.LoadScene(9);
     }
+
+    public void Achivements()
+    {
+        SceneManager.LoadScene(14);
+    }
 }

@@ -51,4 +51,9 @@ public class MainManuScript : MonoBehaviour
     {
         SceneManager.LoadScene(7);
     }
+
+    public void PokreniEndless()
+    {
+        SceneManager.LoadScene(13);
+    }
 }

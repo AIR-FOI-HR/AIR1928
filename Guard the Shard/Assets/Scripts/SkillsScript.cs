@@ -19,6 +19,14 @@ public class SkillsScript : MonoBehaviour
     void Start()
     {
         SkillControl skillControl = new SkillControl();
+        UserControl userControl = new UserControl();
+
+        if (userControl.GetUser(PlayerPrefs.GetInt("userid")).Level < 3)
+        {
+            tglFire.interactable = false;
+            tglSwords.interactable = false;
+            tglStons.interactable = false;
+        }
 
         foreach (var item in skillControl.GetUserSkills(PlayerPrefs.GetInt("userid")))
         {
