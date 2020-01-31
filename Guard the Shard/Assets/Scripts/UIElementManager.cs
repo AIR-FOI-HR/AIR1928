@@ -14,7 +14,7 @@ public class UIElementManager : MonoBehaviour
     public ScoreControl scoreControl = new ScoreControl();
     public GetLevelId levelId = new GetLevelId();
     public Canvas DialogBoxCanvas;
-
+    public int UserId;
     //varijable za dialog
     public bool pauseMode = false;
     public GameObject dialogBox;
@@ -128,7 +128,9 @@ public class UIElementManager : MonoBehaviour
         PauseCanvas.enabled = false;
         FindObjectOfType<AudioManagerController>().MuteAll();
         Time.timeScale = 0f;
-        scoreControl.writeScore(levelId.LevelId(), 1, int.Parse(score));
+        UserId = PlayerPrefs.GetInt("userid", 0);
+        
+        scoreControl.writeScore(levelId.LevelId(), UserId, int.Parse(score));
        
         FindObjectOfType<GameOverScreen>().userResult.text = "Your score: " + score;
         FindObjectOfType<ScoreVisualization>().Visualize();

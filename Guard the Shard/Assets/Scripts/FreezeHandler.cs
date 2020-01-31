@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class FreezeHandler : MonoBehaviour, ISkillInterface
 {
     //parametri koji su preneseni i dalje se prenose
@@ -13,6 +13,10 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
     //sam skill koji se u ovu varijablu učitava
     GameObject InstanceOfSkill = null;
     //dedukcija energije iz objekta
+    //UI element koji poziva skill
+    public Button freezeButton;
+    //skripta koja handla poziv skilla
+    public SkillHandlerScript skripta;
     public bool DeductCost(int cost)
     {
         
@@ -28,7 +32,11 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
     //učitavanje resursa u varijablu
     public void PrepareForUse()
     {
+        skripta = FindObjectOfType<SkillHandlerScript>();
         InstanceOfSkill = Resources.Load("FreezeSkill") as GameObject;
+        freezeButton = GameObject.Find("ThirdSkillButton").GetComponent<Button>();
+        freezeButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("ico_2");
+        freezeButton.onClick.AddListener(delegate { UseSkill(0); });
     }
     //prijenos parametara
     public void SendParameters(float range, int damage, float slow, float duration)
@@ -51,4 +59,10 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
     {
         PrepareForUse();
     }
+    public void UseSkill(int skillId)
+    {
+        skripta.Enabled = true;
+        skripta.skillToUSe = skillId;
+    }
+
 }
