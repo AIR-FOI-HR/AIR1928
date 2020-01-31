@@ -68,6 +68,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         //povećanje broj wavea za 1
+        Debug.Log("wave");
         waveNumber++;
         //stvareanje waveNumber neprijatelja
         for (int i = 0; i < waveNumber; i++)

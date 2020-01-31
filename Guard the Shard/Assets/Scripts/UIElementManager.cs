@@ -38,7 +38,21 @@ public class UIElementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0) && pauseMode == false)
+        {
+            pauseMode = true;
+            DialogBoxCanvas.enabled = false;
+
+            //Igra je u tijeku
+            FindObjectOfType<AudioManagerController>().UnMuteAll();
+            FindObjectOfType<AudioManagerController>().Play("MainTheme");
+            //FindObjectOfType<ScaleEnergy>().Scale(10);
+            Time.timeScale = 1f;
+            GameOverCanvas.enabled = false;
+            InGameCanvas.enabled = true;
+            PauseCanvas.enabled = false;
+
+        }
     }
 
     public void Preview()
