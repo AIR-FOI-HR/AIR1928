@@ -12,24 +12,23 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
     float SKillDuration = 0;
     string[] Tags = null;
     //sam skill koji se u ovu varijablu učitava
-    GameObject InstanceOfSkill = null;
+    GameObject InstanceOfSkill = null;    
     //dedukcija energije iz objekta
-    //UI element koji poziva skill
-    public Button freezeButton;
-    //skripta koja handla poziv skilla
-    public SkillHandlerScript skripta;
+    //UI element koji poziva skill    
+    GameObject sprite = null;
+
     public int GiveCost()
     {
         return cost;
     }
     //učitavanje resursa u varijablu
-    public void PrepareForUse()
-    {
-        skripta = FindObjectOfType<SkillHandlerScript>();
+    public void PrepareForUse(Vector3 buttonPosition, Transform parentObject)
+    {        
         InstanceOfSkill = Resources.Load("FreezeSkill") as GameObject;
-        freezeButton = GameObject.Find("ThirdSkillButton").GetComponent<Button>();
-        freezeButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("ico_2");
-        freezeButton.onClick.AddListener(delegate { UseSkill(0); });
+        sprite = Resources.Load("iko_2") as GameObject;        
+        GameObject createdSprite = Instantiate(sprite, buttonPosition, Quaternion.identity);
+        createdSprite.transform.parent = parentObject;
+
     }
     //prijenos parametara
     public void SendParameters(float range, int damage, float slow, float duration,string[] tags)
@@ -47,15 +46,7 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
         created.GetComponent<Freeze>().GetParameters(SkillRange, Tags);
         return created.GetComponent<Freeze>().GetAllEnemies();
     }
-    void Awake()
-    {
-        PrepareForUse();
-    }
-    public void UseSkill(int skillId)
-    {
-        skripta.Enabled = true;
-        skripta.skillToUSe = skillId;
-    }
+        
     public int GiveDmg()
     {
         return SkillDamage;

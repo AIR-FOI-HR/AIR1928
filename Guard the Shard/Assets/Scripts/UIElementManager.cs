@@ -51,6 +51,7 @@ public class UIElementManager : MonoBehaviour
             GameOverCanvas.enabled = false;
             InGameCanvas.enabled = true;
             PauseCanvas.enabled = false;
+            LevelPreview.enabled = false;
 
         }
     }
@@ -104,6 +105,7 @@ public class UIElementManager : MonoBehaviour
             GameOverCanvas.enabled = false;
             InGameCanvas.enabled = true;
             PauseCanvas.enabled = false;
+            LevelPreview.enabled = false;
         
         }
     }

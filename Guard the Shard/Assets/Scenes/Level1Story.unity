@@ -15112,12 +15112,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a648e130108d86e4694f451032cf2574,
         type: 3}
+    - target: {fileID: 1260623310576082782, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1260623310399436800, guid: af39e249026b11c4a8a7862062c2bee7,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6bf265c2ef12cca4dbdedc64995d458e,
         type: 3}
+    - target: {fileID: 1260623310399436800, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260623310399436803, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Name
+      value: SkillButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260623309959681681, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af39e249026b11c4a8a7862062c2bee7, type: 3}
 --- !u!114 &1260623310413670340 stripped

@@ -1973,6 +1973,7 @@ MonoBehaviour:
   userHS: {fileID: 1590895086}
   globalHS: {fileID: 988492211}
   levelName: {fileID: 815811335}
+  UserId: 0
 --- !u!114 &412670006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1990,6 +1991,7 @@ MonoBehaviour:
   GameOverCanvas: {fileID: 1555224105}
   LevelPreview: {fileID: 412670003}
   DialogBoxCanvas: {fileID: 2129436856}
+  UserId: 0
   pauseMode: 0
   dialogBox: {fileID: 2129436855}
   dialogText: {fileID: 2129436854}
@@ -2289,6 +2291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514811c9f54a38f4fac10cbc62ee62f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UserId: 0
 --- !u!1 &476231429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,6 +2420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514811c9f54a38f4fac10cbc62ee62f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UserId: 0
 --- !u!1 &492163616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,6 +2514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514811c9f54a38f4fac10cbc62ee62f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UserId: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,6 +3323,7 @@ MonoBehaviour:
   GameOverCanvas: {fileID: 1555224105}
   LevelPreview: {fileID: 412670003}
   DialogBoxCanvas: {fileID: 2129436856}
+  UserId: 0
   pauseMode: 0
   dialogBox: {fileID: 2129436855}
   dialogText: {fileID: 2129436854}
@@ -5192,12 +5198,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a648e130108d86e4694f451032cf2574,
         type: 3}
+    - target: {fileID: 1260623310576082782, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1260623310399436800, guid: af39e249026b11c4a8a7862062c2bee7,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6bf265c2ef12cca4dbdedc64995d458e,
         type: 3}
+    - target: {fileID: 1260623310399436800, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260623309959681681, guid: af39e249026b11c4a8a7862062c2bee7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af39e249026b11c4a8a7862062c2bee7, type: 3}
 --- !u!114 &990477249 stripped
@@ -7553,6 +7574,7 @@ MonoBehaviour:
   GameOverCanvas: {fileID: 1555224105}
   LevelPreview: {fileID: 412670003}
   DialogBoxCanvas: {fileID: 2129436856}
+  UserId: 0
   pauseMode: 0
   dialogBox: {fileID: 2129436855}
   dialogText: {fileID: 2129436854}

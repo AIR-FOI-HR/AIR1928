@@ -14,22 +14,19 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
     //sam skill koji se u ovu varijablu učitava
     GameObject InstanceOfSkill = null;
     //dedukcija energije iz objekta
-    //UI element koji poziva skill
-    public Button magicButton;
-    //skripta koja handla poziv skilla
-    public SkillHandlerScript skripta;
+    //Sprite za UI     
+    GameObject sprite = null;
     public int GiveCost()
     {
         return cost;
     }
     //učitavanje resursa u varijablu
-    public void PrepareForUse()
+    public void PrepareForUse(Vector3 buttonPosition, Transform parentObject)
     {
         InstanceOfSkill = Resources.Load("MagicExplosionSkill") as GameObject;
-        skripta = FindObjectOfType<SkillHandlerScript>();
-        magicButton = GameObject.Find("SecondSkillButton").GetComponent<Button>();
-        magicButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("ico_7");
-        magicButton.onClick.AddListener(delegate { UseSkill(1); });
+        sprite = Resources.Load("iko_7") as GameObject;        
+        GameObject createdSprite = Instantiate(sprite, buttonPosition, Quaternion.identity);
+        createdSprite.transform.parent = parentObject;
     }
     //prijenos parametara
     public void SendParameters(float range, int damage, float slow, float duration, string[] tags)
@@ -47,15 +44,7 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
         created.GetComponent<MagicExplosion>().GetParameters(SkillRange, Tags);
         return created.GetComponent<MagicExplosion>().GetAllEnemies();
     }
-    void Awake()
-    {
-        PrepareForUse();
-    }
-    public void UseSkill(int skillId)
-    {
-        skripta.Enabled = true;
-        skripta.skillToUSe = skillId;
-    }
+    
     public int GiveDmg()
     {
         return SkillDamage;

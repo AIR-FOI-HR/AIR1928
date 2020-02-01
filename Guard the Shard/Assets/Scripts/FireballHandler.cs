@@ -15,21 +15,19 @@ public class FireballHandler : MonoBehaviour, ISkillInterface
     //sam skill koji se u ovu varijablu učitava
     GameObject InstanceOfSkill = null;
     //UI element koji poziva skill
-    public Button fireballButton;
-    //skripta koja handla poziv skilla
-    public SkillHandlerScript skripta;
+    public string spriteName = "iko_1";
+    GameObject sprite = null;
     public int GiveCost()
     {
         return cost;
     }
     //učitavanje resursa u varijablu
-    public void PrepareForUse()
-    {
-        skripta = FindObjectOfType<SkillHandlerScript>();
+    public void PrepareForUse(Vector3 buttonPosition, Transform parentObject)
+    {        
         InstanceOfSkill = Resources.Load("FireballSkill") as GameObject;
-        fireballButton = GameObject.Find("FirstSkillButton").GetComponent<Button>();
-        fireballButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("ico_1");
-        fireballButton.onClick.AddListener(delegate { UseSkill(2); });
+        sprite = Resources.Load(spriteName) as GameObject;       
+        GameObject createdSprite = Instantiate(sprite, buttonPosition, Quaternion.identity);
+        createdSprite.transform.parent = parentObject;
     }
     //prijenos parametara
     public void SendParameters(float range, int damage, float slow, float duration, string[] tags)
@@ -46,17 +44,8 @@ public class FireballHandler : MonoBehaviour, ISkillInterface
         GameObject created = Instantiate(InstanceOfSkill, vector3, Quaternion.identity);
         created.GetComponent<Fireball>().GetParameters(SkillRange, Tags);
         return created.GetComponent<Fireball>().GetAllEnemies();
-    }
-    void Awake()
-    {
-        PrepareForUse();
-    }
-    public void UseSkill(int skillId)
-    {
-        skripta.Enabled = true;
-        skripta.skillToUSe = skillId;
-    }
-
+    }   
+    
     public int GiveDmg()
     {
         return SkillDamage;

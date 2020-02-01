@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class SkillHandlerScript : MonoBehaviour
 {
     // Ova klasa služi upravljanju vještinama , to uključuje više stvari počevši od samog dohvaćanja podataka preko instanciranja  do pozivanja instanciranih vještina
@@ -9,7 +9,7 @@ public class SkillHandlerScript : MonoBehaviour
     string[] tags = { "EarthEnemy", "AirEnemy" };
     public Vector3 LastClickPosition;
     //0 za prvi skill , 1 za drugi itd ; ovo služi kako bi znali koji skill pozvati
-    public int skillToUSe = 0;
+    public int skillToUSe;
     //jeli omogućeno baciti/probati baciti skill nakon svakog bacanja ide na false;
     public bool Enabled = false;
     //skripta koja sadržava podatke koji nam trebaju
@@ -17,7 +17,9 @@ public class SkillHandlerScript : MonoBehaviour
     //lista skilova koji su učitani (tj biti će)
     public List<ISkillInterface> ListOfSkills = new List<ISkillInterface>();
     public Energy energija = null;
+     
     //obični raycast koji traži collider s tagom ako je pogodio collider vraća true
+     
     private bool RaycastElemnt(string tag, RaycastHit2D[] hits)
     {
         bool answer = false;
@@ -51,8 +53,25 @@ public class SkillHandlerScript : MonoBehaviour
             //dodaje se klasa za upravljanje objektom koja nasljeđuje interface u listu kako bi se kasnije pozivalo
             ListOfSkills.Add((ISkillInterface)target.GetComponent(typeof(ISkillInterface)));
             ListOfSkills[index].SendParameters(item.RangeSkill, item.Damage, item.SlowSkill, item.Duration,tags);
+            //dodaj button 
+            GameObject prefabButton = Resources.Load("SkillButton") as GameObject;
+            GameObject goButton = Instantiate(prefabButton);
+            Transform inGameCanvas = GameObject.Find("InGameCanvas").transform;
+            goButton.transform.SetParent(inGameCanvas);            
+            
+            Vector3 buttonPosition = new Vector3(-281 + index * 160, -201);
+            goButton.transform.localPosition = buttonPosition;
+            goButton.GetComponentInChildren<Text>().text = index.ToString();
+            
+            Button tempButton = goButton.GetComponent<Button>();            
+            //tempButton.onClick.AddListener(() => UseSkill(0));
+
+            goButton.GetComponent<Button>().onClick.AddListener(() => UseSkill(tempButton.GetComponentInChildren<Text>().text));
+            ListOfSkills[index].PrepareForUse(goButton.transform.position, inGameCanvas);
+
             index++;
         }
+        
     }
 
     void Update()
@@ -86,4 +105,12 @@ public class SkillHandlerScript : MonoBehaviour
             if (slow > 0) enemy.GetComponent<NeprijateljKretanje>().SlowEnemy(slow, duration);
         }
     }
+
+    public void UseSkill(string skillId)
+    {
+        Debug.Log(skillId);
+        Enabled = true;
+        skillToUSe = int.Parse(skillId);
+    }
+
 }
