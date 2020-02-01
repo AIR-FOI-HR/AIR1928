@@ -10,6 +10,7 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
     int SkillDamage = 0;
     float SkillSlow = 0;
     float SKillDuration = 0;
+    string[] Tags = null;
     //sam skill koji se u ovu varijablu učitava
     GameObject InstanceOfSkill = null;
     //dedukcija energije iz objekta
@@ -17,16 +18,9 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
     public Button magicButton;
     //skripta koja handla poziv skilla
     public SkillHandlerScript skripta;
-    public bool DeductCost(int cost)
+    public int GiveCost()
     {
-        float usableEnergy = GameObject.Find("EnergyContainer").GetComponent<Energy>().currentEnergy;
-        if (usableEnergy >= cost)
-        {
-            GameObject.Find("EnergyContainer").GetComponent<Energy>().Deduct(cost);
-            return true;
-        }
-        return false;
-
+        return cost;
     }
     //učitavanje resursa u varijablu
     public void PrepareForUse()
@@ -38,21 +32,20 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
         magicButton.onClick.AddListener(delegate { UseSkill(1); });
     }
     //prijenos parametara
-    public void SendParameters(float range, int damage, float slow, float duration)
+    public void SendParameters(float range, int damage, float slow, float duration, string[] tags)
     {
         SkillRange = range;
         SkillDamage = damage;
         SkillSlow = slow;
         SKillDuration = duration;
+        Tags = tags;
     }
     //samo instanciranje učitanog skilla i prosljeđivanje skilla
-    public void SpawnObject(Vector3 vector3)
+    public List<GameObject> SpawnObject(Vector3 vector3)
     {
-        if (DeductCost(cost))
-        {
-            GameObject created = Instantiate(InstanceOfSkill, vector3, Quaternion.identity);
-            created.GetComponent<MagicExplosion>().GetParameters(SkillRange, SkillDamage, SkillSlow, SKillDuration);
-        }
+        GameObject created = Instantiate(InstanceOfSkill, vector3, Quaternion.identity);
+        created.GetComponent<MagicExplosion>().GetParameters(SkillRange, Tags);
+        return created.GetComponent<MagicExplosion>().GetAllEnemies();
     }
     void Awake()
     {
@@ -62,5 +55,19 @@ public class MagicExplosionHandler : MonoBehaviour, ISkillInterface
     {
         skripta.Enabled = true;
         skripta.skillToUSe = skillId;
+    }
+    public int GiveDmg()
+    {
+        return SkillDamage;
+    }
+
+    public float GiveSlow()
+    {
+        return SkillSlow;
+    }
+
+    public float GiveDuration()
+    {
+        return SKillDuration;
     }
 }

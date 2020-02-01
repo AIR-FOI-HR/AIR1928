@@ -6,15 +6,17 @@ public class SkillHandlerScript : MonoBehaviour
 {
     // Ova klasa služi upravljanju vještinama , to uključuje više stvari počevši od samog dohvaćanja podataka preko instanciranja  do pozivanja instanciranih vještina
 
+    string[] tags = { "EarthEnemy", "AirEnemy" };
     public Vector3 LastClickPosition;
     //0 za prvi skill , 1 za drugi itd ; ovo služi kako bi znali koji skill pozvati
     public int skillToUSe = 0;
     //jeli omogućeno baciti/probati baciti skill nakon svakog bacanja ide na false;
-    public bool Enabled = true;
+    public bool Enabled = false;
     //skripta koja sadržava podatke koji nam trebaju
     public LevelDataControler scriptWithData = null;
     //lista skilova koji su učitani (tj biti će)
     public List<ISkillInterface> ListOfSkills = new List<ISkillInterface>();
+    public Energy energija = null;
     //obični raycast koji traži collider s tagom ako je pogodio collider vraća true
     private bool RaycastElemnt(string tag, RaycastHit2D[] hits)
     {
@@ -34,6 +36,7 @@ public class SkillHandlerScript : MonoBehaviour
 
     void Start()
     {
+        energija = GameObject.Find("EnergyContainer").GetComponent<Energy>();
         scriptWithData = GameObject.Find("DataHandler").GetComponent<LevelDataControler>();
         GetModules();
     }
@@ -47,7 +50,7 @@ public class SkillHandlerScript : MonoBehaviour
             GameObject target = Instantiate(objectToSpawn, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             //dodaje se klasa za upravljanje objektom koja nasljeđuje interface u listu kako bi se kasnije pozivalo
             ListOfSkills.Add((ISkillInterface)target.GetComponent(typeof(ISkillInterface)));
-            ListOfSkills[index].SendParameters(item.RangeSkill, item.Damage, item.SlowSkill, item.Duration);
+            ListOfSkills[index].SendParameters(item.RangeSkill, item.Damage, item.SlowSkill, item.Duration,tags);
             index++;
         }
     }
@@ -64,9 +67,23 @@ public class SkillHandlerScript : MonoBehaviour
             RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, Vector2.zero);
             if (RaycastElemnt("SkillArea", hits) && Enabled)
             {
-                ListOfSkills[skillToUSe].SpawnObject(LastClickPosition);
+                if (energija.currentEnergy >= ListOfSkills[skillToUSe].GiveCost())
+                {
+                    energija.Deduct(ListOfSkills[skillToUSe].GiveCost());
+                    List<GameObject> targets = ListOfSkills[skillToUSe].SpawnObject(LastClickPosition);
+                    DoEfect(targets, ListOfSkills[skillToUSe].GiveDmg(), ListOfSkills[skillToUSe].GiveSlow(), ListOfSkills[skillToUSe].GiveDuration());
+                    Enabled = false;
+                }
                 Enabled = false;
             }
+        }
+    }
+    public void DoEfect(List<GameObject> targets,int dmg,float slow,float duration)
+    {
+        foreach (GameObject enemy in targets)
+        {
+            enemy.GetComponent<NeprijateljFunction>().TakeDamage(dmg);
+            if (slow > 0) enemy.GetComponent<NeprijateljKretanje>().SlowEnemy(slow, duration);
         }
     }
 }

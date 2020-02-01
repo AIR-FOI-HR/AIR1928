@@ -7,9 +7,7 @@ public class Fireball : MonoBehaviour
     //parametri vještine
     float lifetime = 1;
     float SkillRange = 0;
-    int SkillDamage = 0;
-    float SkillSlow = 0;
-    float SKillDuration = 0;
+    string[] Tags = null;
     //lista neprijatelja nad kojima treba nešto napraviti
     public List<GameObject> Targets = new List<GameObject>();
     void Awake()
@@ -17,52 +15,28 @@ public class Fireball : MonoBehaviour
         //uništavanje nakon lifetime sekundi
         Destroy(gameObject, lifetime);
     }
-    private void Start()
-    {
-        GetAllEnemies();
-        DoEfect();
-    }
     //stavljanje svih neprijatelja koji su u radijusu u listu
-    void GetAllEnemies()
+    public List<GameObject> GetAllEnemies()
     {
-        GameObject[] enemiesAir = null;
-        GameObject[] enemiesGround = null;
-        enemiesGround = GameObject.FindGameObjectsWithTag("EarthEnemy");
-        enemiesAir = GameObject.FindGameObjectsWithTag("AirEnemy");
-        foreach (GameObject enemy in enemiesGround)
+        GameObject[] enemiesPerTag = null;
+        foreach (string tag in Tags)
         {
-            //provjera udaljenosti
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < SkillRange)
+            enemiesPerTag = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject obj in enemiesPerTag)
             {
-                Targets.Add(enemy);
+                float distanceToEnemy = Vector3.Distance(transform.position, obj.transform.position);
+                if (distanceToEnemy < SkillRange)
+                {
+                    Targets.Add(obj);
+                }
             }
         }
-        foreach (GameObject enemy in enemiesAir)
-        {
-            //provjera udaljenosti
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < SkillRange)
-            {
-                Targets.Add(enemy);
-            }
-        }
-    }
-    //samo aktiviranje efekta vještine nad neprijateljima
-    public void DoEfect()
-    {
-        foreach (GameObject enemy in Targets)
-        {
-            enemy.GetComponent<NeprijateljFunction>().TakeDamage(SkillDamage);
-            if (SkillSlow != 0) enemy.GetComponent<NeprijateljKretanje>().SlowEnemy(SkillSlow, SKillDuration);
-        }
+        return Targets;
     }
     //dohvata parametara
-    public void GetParameters(float range, int damage, float slow, float duration)
+    public void GetParameters(float range,string[] tags)
     {
+        Tags = tags;
         SkillRange = range;
-        SkillDamage = damage;
-        SkillSlow = slow;
-        SKillDuration = duration;
     }
 }

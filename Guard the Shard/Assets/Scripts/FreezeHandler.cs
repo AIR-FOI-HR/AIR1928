@@ -10,6 +10,7 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
     int SkillDamage = 0;
     float SkillSlow = 0;
     float SKillDuration = 0;
+    string[] Tags = null;
     //sam skill koji se u ovu varijablu učitava
     GameObject InstanceOfSkill = null;
     //dedukcija energije iz objekta
@@ -17,17 +18,9 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
     public Button freezeButton;
     //skripta koja handla poziv skilla
     public SkillHandlerScript skripta;
-    public bool DeductCost(int cost)
+    public int GiveCost()
     {
-        
-        float usableEnergy = GameObject.Find("EnergyContainer").GetComponent<Energy>().currentEnergy;
-        if (usableEnergy >= cost)
-        {
-            GameObject.Find("EnergyContainer").GetComponent<Energy>().Deduct(cost);
-            return true;
-        }
-        return false;
-
+        return cost;
     }
     //učitavanje resursa u varijablu
     public void PrepareForUse()
@@ -39,21 +32,20 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
         freezeButton.onClick.AddListener(delegate { UseSkill(0); });
     }
     //prijenos parametara
-    public void SendParameters(float range, int damage, float slow, float duration)
+    public void SendParameters(float range, int damage, float slow, float duration,string[] tags)
     {
         SkillRange = range;
         SkillDamage = damage;
         SkillSlow = slow;
         SKillDuration = duration;
+        Tags = tags;
     }
     //samo instanciranje učitanog skilla i prosljeđivanje skilla
-    public void SpawnObject(Vector3 vector3)
+    public List<GameObject> SpawnObject(Vector3 vector3)
     {
-        if (DeductCost(cost))
-        {
-            GameObject created = Instantiate(InstanceOfSkill, vector3, Quaternion.identity);
-            created.GetComponent<Freeze>().GetParameters(SkillRange, SkillDamage, SkillSlow, SKillDuration);
-        }
+        GameObject created = Instantiate(InstanceOfSkill, vector3, Quaternion.identity);
+        created.GetComponent<Freeze>().GetParameters(SkillRange, Tags);
+        return created.GetComponent<Freeze>().GetAllEnemies();
     }
     void Awake()
     {
@@ -64,5 +56,18 @@ public class FreezeHandler : MonoBehaviour, ISkillInterface
         skripta.Enabled = true;
         skripta.skillToUSe = skillId;
     }
+    public int GiveDmg()
+    {
+        return SkillDamage;
+    }
 
+    public float GiveSlow()
+    {
+        return SkillSlow;
+    }
+
+    public float GiveDuration()
+    {
+        return SKillDuration;
+    }
 }
