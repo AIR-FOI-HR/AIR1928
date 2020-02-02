@@ -10,4 +10,5 @@ public class Skill
     public float Duration;
     public float SlowSkill;
     public int Damage;
+    public string Dat;
 }
